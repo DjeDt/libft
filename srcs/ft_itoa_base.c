@@ -6,13 +6,13 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:32:14 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/14 18:05:58 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/14 18:10:24 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static	int	nb_nbr(int n)
+static int	nb_nbr(int n)
 {
 	int i;
 
@@ -22,11 +22,11 @@ static	int	nb_nbr(int n)
 	return (i);
 }
 
-char	*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(int n, int base)
 {
-	int	j;
-	int	sig;
-	char	*ret;
+	int				j;
+	int				sig;
+	char			*ret;
 	unsigned int	nbr;
 
 	sig = 0;
