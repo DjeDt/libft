@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 20:41:29 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/02/24 20:46:24 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/14 17:14:26 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,13 @@ char		*ft_strjoin_fr(char const *s1, char const *s2)
 	join = (char*)malloc(sizeof(char) * (a + ft_strlen(s2) + 1));
 	if (join == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
+	i = -1;
+	while (s1[++i] != '\0')
 		join[i] = s1[i];
-		i++;
-	}
-	i = 0;
-	free((char*)s2);
-	while (s2[i] != '\0')
-	{
+	i = -1;
+	while (s2[++i] != '\0')
 		join[a + i] = s2[i];
-		i++;
-	}
 	join[a + i] = '\0';
+	free((char*)s2);
 	return (join);
 }
