@@ -32,3 +32,7 @@ ft_ls
 # Debug files
 *.dSYM/
 *.su
+
+# Fichiers inutiles
+main.c
+*~
