@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/03/14 16:36:44 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/03/14 18:03:47 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -82,6 +82,7 @@ ft_memcmp.c \
 ft_memalloc.c \
 ft_memdel.c \
 ft_itoa.c \
+ft_itoa_base.c \
 ft_atoi.c \
 ft_lstadd.c \
 ft_lstdel.c \

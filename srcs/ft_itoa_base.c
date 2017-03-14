@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 19:59:37 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/14 17:23:52 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/03/14 17:32:14 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/03/14 18:05:58 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int	delim(char c)
+static	int	nb_nbr(int n)
 {
-	if (c == '\t' || c == '\v' || c == '\n'
-	|| c == '\r' || c == '\f' || c == ' ')
-		return (1);
-	return (0);
+	int i;
+
+	i = 1;
+	while (n /= 10)
+		i++;
+	return (i);
 }
 
-int			ft_atoi(const char *str)
+char	*ft_itoa_base(int n, int base)
 {
-	int		nbr;
-	int		i;
-	char	n;
+	int	j;
+	int	sig;
+	char	*ret;
+	unsigned int	nbr;
 
-	nbr = 0;
-	n = 0;
-	i = -1;
-	while (delim(str[++i]))
-		;
-	if (str[i] == '-')
-		n = 1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while ((str[i] > 47) && (str[i] < 58))
+	sig = 0;
+	j = nb_nbr(n);
+	nbr = n;
+	if (n < 0)
 	{
-		nbr = (nbr * 10) + str[i] - 48;
-		i++;
+		sig = 1;
+		nbr = -n;
 	}
-	if (n == 1)
-		return (-nbr);
-	return (nbr);
+	if (!(ret = (char*)malloc(sizeof(char) * j + sig + 1)))
+		return (NULL);
+	ret[j + sig] = '\0';
+	while (j-- > 0)
+	{
+		ret[j + sig] = (nbr % base) + '0';
+		nbr /= base;
+	}
+	if (sig == 1)
+		ret[0] = '-';
+	return (ret);
 }
