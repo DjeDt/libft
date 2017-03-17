@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/03/14 18:03:47 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/03/17 15:11:48 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -115,7 +115,7 @@ $(NAME): $(OBJ)
 clean:
 	@echo "$(COL_YELLOW)[    CLEANING LIBFT    ]\n"
 	@rm -rf $(OBJ)
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)object removed."
+	@echo "$(COL_YELLOW)-> $(COL_BLACK)object removed.\n"
 
 fclean: clean
 	@rm -f $(NAME)
