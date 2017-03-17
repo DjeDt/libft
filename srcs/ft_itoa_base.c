@@ -6,46 +6,37 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:32:14 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/14 18:10:24 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/17 11:59:50 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int	nb_nbr(int n)
+static int	ft_len(int i, int base)
 {
-	int i;
+	int len;
 
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
+	len = 1;
+	while (i /= base)
+		len++;
+	return (len);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(int value, int base)
 {
-	int				j;
-	int				sig;
-	char			*ret;
-	unsigned int	nbr;
+	int			count;
+	char		*ret;
+	const char	*str;
 
-	sig = 0;
-	j = nb_nbr(n);
-	nbr = n;
-	if (n < 0)
-	{
-		sig = 1;
-		nbr = -n;
-	}
-	if (!(ret = (char*)malloc(sizeof(char) * j + sig + 1)))
+	count = ft_len(value, base);
+	str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	if (!(ret = (char*)malloc(sizeof(char) * (count + 1))))
 		return (NULL);
-	ret[j + sig] = '\0';
-	while (j-- > 0)
+	ret[count] = '\0';
+	while (count--)
 	{
-		ret[j + sig] = (nbr % base) + '0';
-		nbr /= base;
+		ret[count] = str[value % base];
+		value /= base;
 	}
-	if (sig == 1)
-		ret[0] = '-';
 	return (ret);
 }
