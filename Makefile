@@ -10,12 +10,18 @@
 #                                                                              #
 #******************************************************************************#
 
+# Output file
 NAME = libft.a
+
+# Details
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+
+# Path
 SRC_PATH = ./srcs/
 INC_PATH = -I./includes/
 
+# Colors
 COL_BLACK  = \033[1;30m
 COL_RED    = \033[1;31m
 COL_GREEN  = \033[1;32m
@@ -24,6 +30,8 @@ COL_BLUE   = \033[1;34m
 COL_PURPLE = \033[1;35m
 COL_WHITE  = \033[1;37m
 
+
+# Sources
 SRC =\
 \
 ft_bzero.c \
@@ -90,35 +98,37 @@ ft_lstdelone.c \
 ft_lstiter.c \
 ft_lstmap.c \
 ft_lstnew.c \
+get_next_line.c \
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 O = $(notdir $(SRC))
 OB = $(basename $(O))
 OBJ = $(addsuffix .o ,$(OB))
 
+# Rules
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(OBJ): $(SRCS)
-	@echo "$(COL_YELLOW)[    BUILDING LIBFT    ]\n"
 	@$(CC) -c $(FLAGS) $(INC_PATH) $(SRCS)
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)compilation done."
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)object created."
+	@echo "$(COL_GREEN)->[libft.a] : compilation done."
+#	@echo "$(COL_GREEN)-> $(COL_GREEN)compilation done."
+#	@echo "$(COL_GREEN)-> $(COL_GREEN)object created."
 
 $(NAME): $(OBJ)
 	@ar rc $@ $(OBJ)
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)$@ created."
+#	@echo "$(COL_GREEN)-> $(COL_GREEN)$@ created."
 	@ranlib $@
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)$@ sorted.\n"
+#	@echo "$(COL_GREEN)-> $(COL_GREEN)$@ sorted.\n"
 
 clean:
-	@echo "$(COL_YELLOW)[    CLEANING LIBFT    ]\n"
+#	@echo "$(COL_YELLOW)[    CLEANING LIBFT    ]\n"
 	@rm -rf $(OBJ)
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)object removed.\n"
+	@echo "$(COL_RED)-> libft cleaned && object removed"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(COL_YELLOW)-> $(COL_BLACK)$(NAME) removed.\n"
+#	@echo "$(COL_RED)-> $(COL_RED)$(NAME) removed.\n"
 
 re: fclean all
