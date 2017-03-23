@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/03/23 12:53:32 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/03/23 19:26:46 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -91,6 +91,7 @@ ft_memalloc.c \
 ft_memdel.c \
 ft_tabcpy.c \
 ft_tabprint.c \
+ft_tabfree.c \
 ft_itoa.c \
 ft_itoa_base.c \
 ft_atoi.c \

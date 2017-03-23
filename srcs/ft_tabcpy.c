@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 12:19:02 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/23 12:41:22 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/23 18:47:11 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ static int	nb_tab(char **tab)
 	return (count);
 }
 
+static char	**ft_ret(void)
+{
+	char **ret;
+
+	if (!(ret = (char**)malloc(sizeof(char*) * 1)))
+		return (NULL);
+	ret[0] = NULL;
+	return (ret);
+}
+
 char		**ft_tabcpy(char **tab)
 {
 	int		len;
@@ -31,6 +41,8 @@ char		**ft_tabcpy(char **tab)
 
 	len = 0;
 	count2 = -1;
+	if ((*tab) == NULL)
+		return (ft_ret());
 	count = nb_tab(tab);
 	if (!(ret = (char**)malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
