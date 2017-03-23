@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/17 11:12:49 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/23 12:30:10 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
+
+char				**ft_tabcpy(char **tab);
 
 void				ft_bzero(void *s, size_t n);
 int					ft_isalpha(int c);
