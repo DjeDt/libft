@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/03/23 19:26:46 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/03/27 15:28:00 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -102,6 +102,7 @@ ft_lstiter.c \
 ft_lstmap.c \
 ft_lstnew.c \
 get_next_line.c \
+ft_split_whitespaces.c \
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 O = $(notdir $(SRC))

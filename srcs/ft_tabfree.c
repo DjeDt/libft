@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 19:24:33 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/23 19:26:29 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/24 12:28:12 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_tabfree(char **tab)
 
 	count = -1;
 	while (tab[++count])
-		count++;
-	while (tab[count--])
 	{
 		free(tab[count]);
 		tab[count] = NULL;
