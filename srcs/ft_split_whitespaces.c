@@ -6,11 +6,11 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:15:00 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/24 11:20:23 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/03/27 15:36:21 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
 static int		delimiteurs(char c)
 {
