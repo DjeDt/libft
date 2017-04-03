@@ -17,9 +17,8 @@ void	ft_tabprint(char **tab)
 	int count;
 
 	count = -1;
-	if (tab)
-	{
-		while (tab[++count])
-			ft_putendl(tab[count]);
-	}
+	if (!tab)
+		return ;
+	while (tab[++count])
+		ft_putendl(tab[count]);
 }

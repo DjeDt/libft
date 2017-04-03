@@ -47,6 +47,7 @@ ft_putstrlen_fd.c \
 ft_putstr_fd.c \
 ft_strcat.c \
 ft_strchr.c \
+ft_strreplace.c \
 ft_strclr.c \
 ft_strcmp.c \
 ft_strcpy.c \
@@ -90,8 +91,10 @@ ft_memcmp.c \
 ft_memalloc.c \
 ft_memdel.c \
 ft_tabcpy.c \
+ft_tabjoin.c \
 ft_tabprint.c \
 ft_tabfree.c \
+ft_tablen.c \
 ft_itoa.c \
 ft_itoa_base.c \
 ft_atoi.c \

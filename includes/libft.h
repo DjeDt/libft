@@ -42,6 +42,7 @@ size_t				ft_strlen(const char *str);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strdup(const char *src);
+void				ft_strreplace(char *old, char *new);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
@@ -82,8 +83,10 @@ char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
 
 char				**ft_tabcpy(char **tab);
+char				**ft_tabjoin(char **base, char *add);
 void				ft_tabprint(char **tab);
 char				*ft_tabfree(char **tab);
+int					ft_tablen(char **tab);
 char				**ft_split_whitespaces(char *str);
 
 void				ft_bzero(void *s, size_t n);
