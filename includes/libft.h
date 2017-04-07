@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/07 12:25:21 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/07 17:07:51 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_print_binary(unsigned int n);
 
 size_t				ft_strlen(const char *str);
+int					ft_strnlen(const char *str, char c);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strdup(const char *src);

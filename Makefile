@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/04/07 12:25:49 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/04/07 17:08:53 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -63,6 +63,7 @@ ft_strjoin_fr.c \
 ft_strjoin_fb.c \
 ft_strlcat.c \
 ft_strlen.c \
+ft_strnlen.c \
 ft_strmap.c \
 ft_strmapi.c \
 ft_strncat.c \
