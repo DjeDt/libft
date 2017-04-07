@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/03/27 15:28:00 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/04/07 12:25:49 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -45,6 +45,7 @@ ft_putstr.c \
 ft_putstrlen.c \
 ft_putstrlen_fd.c \
 ft_putstr_fd.c \
+ft_print_binary.c \
 ft_strcat.c \
 ft_strchr.c \
 ft_strreplace.c \
