@@ -32,7 +32,7 @@ static char	**ft_ret(void)
 	return (ret);
 }
 
-char		**ft_tabcpy(char **tab)
+char		**ft_arraycpy(char **tab)
 {
 	int		len;
 	int		count;

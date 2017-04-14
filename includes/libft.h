@@ -84,11 +84,11 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
 
-char				**ft_tabcpy(char **tab);
-char				**ft_tabjoin(char **base, char *add);
-void				ft_tabprint(char **tab);
-char				*ft_tabfree(char **tab);
-int					ft_tablen(char **tab);
+char				**ft_arraycpy(char **tab);
+char				**ft_arrayjoin(char **base, char *add);
+void				ft_arrayprint(char **tab);
+void				ft_arrayfree(char ***tab);
+int					ft_arraylen(char **tab);
 char				**ft_split_whitespaces(char *str);
 
 void				ft_bzero(void *s, size_t n);

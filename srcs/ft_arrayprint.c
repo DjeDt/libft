@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_tabprint(char **tab)
+void	ft_arrayprint(char **tab)
 {
-	int count;
+	size_t	count;
 
 	count = -1;
 	if (!tab)
