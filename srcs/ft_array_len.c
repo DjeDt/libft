@@ -1,7 +1,7 @@
 
 #include "libft.h"
 
-int		ft_arraylen(char **tab)
+int		ft_array_len(char **tab)
 {
 	int count;
 

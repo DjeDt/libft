@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabfree.c                                       :+:      :+:    :+:   */
+/*   ft_tabprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 19:24:33 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/24 12:28:12 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/03/23 12:52:11 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/03/23 12:57:18 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_arrayfree(char ***tab)
+void	ft_array_print(char **tab)
 {
 	size_t	count;
-	char	**tmp;
 
 	count = -1;
-	tmp = (*tab);
-	if (tab != NULL)
-	{
-		while (tmp[++count])
-			free(tmp[count]);
-		free(tmp);
-		tmp = NULL;
-	}
+	if (!tab)
+		return ;
+	while (tab[++count])
+		ft_putendl(tab[count]);
 }

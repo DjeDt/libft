@@ -50,7 +50,7 @@ SRCS = \
 \
 	ft_memcpy.c ft_memccpy.c ft_memset.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_memalloc.c ft_memdel.c ft_bzero.c \
 \
-	ft_arraycpy.c ft_arrayjoin.c ft_arrayprint.c ft_arrayfree.c ft_arraylen.c ft_split_whitespaces.c \
+	ft_array_cpy.c ft_array_join.c ft_array_print.c ft_array_free.c ft_array_len.c ft_split_whitespaces.c \
 \
 	ft_itoa.c ft_itoa_base.c ft_atoi.c \
 \
