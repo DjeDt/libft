@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/04/17 17:35:42 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/04/17 18:09:38 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -64,6 +64,7 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
 
 all: $(NAME)
 
+#$(NAME): logo $(OBJ)
 $(NAME): logo $(OBJ)
 	@$(AR) $(OBJ)
 	@$(RAN)
@@ -73,12 +74,12 @@ $(OBJ): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@$(CC) -o $@ $(FLAGS) $(E_FLAGS) $(INC) -c $<
 	@printf "$(COL_GREEN)%s -> %s                            \r" $@ $<
 
-logo:
-	@printf " _    _  ___  ___  ___ \n"
-	@printf "| |  | || . >| __||_ _|\n"
-	@printf "| |_ | || . \| _|  | | \n"
-	@printf "|___||_||___/|_|   |_| \n"
-	@printf "                       \n"
+#logo:
+#	@printf " _    _  ___  ___  ___ \n"
+#	@printf "| |  | || . >| __||_ _|\n"
+#	@printf "| |_ | || . \| _|  | | \n"
+#	@printf "|___||_||___/|_|   |_| \n"
+#	@printf "                       \n"
 
 clean:
 	@/bin/rm -rf $(OBJ_PATH)
