@@ -5,7 +5,7 @@ char	**ft_array_join(char **base, char *add)
 	int		count;
 	char	**ret;
 
-	if (!(ret = (char**)malloc(sizeof(char*) * ft_arraylen(base) + 1)))
+	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(base) + 1)))
 		return (NULL);
 	count = -1;
 	while (base[++count] != NULL)
