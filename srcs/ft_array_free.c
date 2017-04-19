@@ -12,24 +12,17 @@
 
 #include "libft.h"
 
-void	ft_array_free(char ***tab)
+void	ft_array_free(char ***array)
 {
-	size_t	count;
-	size_t	count2;
-	char	**tmp;
+	int count;
 
 	count = 0;
-	count2 = 0;
-	tmp = (*tab);
-	while (tmp[count2] != NULL)
-		count2++;
-	if (tab != NULL)
+	while ((*array)[count])
 	{
-		while (count < count2)
-		{
-			free(tmp[count]);
-			count++;
-		}
-		free(tmp);
+		free((*array)[count]);
+		count++;
 	}
+	free((*array)[count]);
+	free(*array);
+	*array = NULL;
 }

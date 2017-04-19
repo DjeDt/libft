@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char		**ft_array_cpy(char **tab)
+char		**ft_array_cpy(char **array)
 {
 	int		count;
 	char	**ret;
 
 	count = 0;
-	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(tab) + 1)))
+	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(array) + 1)))
 		return (NULL);
-	while (tab[count] != NULL)
+	while (array[count] != NULL)
 	{
-		ret[count] = ft_strdup(tab[count]);
+		ret[count] = ft_strdup(array[count]);
 		count++;
 	}
-	tab[count] = NULL;
+	ret[count] = NULL;
 	return (ret);
 }

@@ -1,14 +1,14 @@
 
 #include "libft.h"
 
-int		ft_array_len(char **tab)
+size_t	ft_array_len(char **array)
 {
-	int count;
+	size_t count;
 
 	count = 0;
-	if (tab == NULL)
+	if (!array)
 		return (0);
-	while (tab[count] != NULL)
+	while (array[count])
 		count++;
 	return (count);
 }
