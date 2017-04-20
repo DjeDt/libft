@@ -6,15 +6,19 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/07 17:02:18 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/07 17:08:28 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:07:46 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strnlen(const char *str, char c)
+#include "libft.h"
+
+size_t		ft_strnlen(const char *str, char c)
 {
-	int count;
+	size_t count;
 
 	count = 0;
+	if (str == NULL)
+		return (0);
 	while ((str[count] != '\0') && (str[count] != c))
 		count++;
 	return (count);
