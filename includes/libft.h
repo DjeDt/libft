@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/20 15:07:11 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/25 17:07:01 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ int					ft_atoi(const char *str);
 
 char				**ft_array_cpy(char **array);
 char				**ft_array_join(char **array, char *add);
-void				ft_array_print(char **array);
+void				ft_array_print(const char **array);
 void				ft_array_free(char ***array);
-size_t				ft_array_len(char **array);
+size_t				ft_array_len(const char **array);
 char				**ft_split_whitespaces(char *str);
 
 void				ft_bzero(void *s, size_t n);

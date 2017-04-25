@@ -6,13 +6,13 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 12:52:11 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/23 12:57:18 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/25 17:06:44 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_array_print(char **tab)
+void	ft_array_print(const char **tab)
 {
 	size_t	count;
 
