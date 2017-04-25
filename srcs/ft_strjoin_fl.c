@@ -39,6 +39,6 @@ char		*ft_strjoin_fl(char const *s1, char const *s2)
 	while (s2[++i] != '\0')
 		join[a + i] = s2[i];
 	join[a + i] = '\0';
-	free((char*)s1);
+	ft_memdel((void*)&s1);
 	return (join);
 }
