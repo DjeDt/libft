@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/25 17:07:01 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/27 16:54:24 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ size_t				ft_strnlen(const char *str, char c);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strdup(const char *src);
+char				*ft_strndup(const char *src, size_t n);
 void				ft_strreplace(char *old, char *new);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
@@ -84,7 +85,7 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
 
-char				**ft_array_cpy(char **array);
+char				**ft_array_cpy(const char **array);
 char				**ft_array_join(char **array, char *add);
 void				ft_array_print(const char **array);
 void				ft_array_free(char ***array);
@@ -97,6 +98,7 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalnum(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -110,3 +112,10 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					get_next_line(const int fd, char **line);
 
 #endif
+
+
+
+
+
+
+

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 12:19:02 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/27 16:43:05 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/04/27 15:58:59 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/04/27 16:07:41 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_array_cpy(const char **array)
+char	*ft_strndup(const char *src, size_t n)
 {
-	int		count;
-	char	**ret;
+	size_t	count;
+	char	*ret;
 
-	count = 0;
-	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(array) + 1)))
-		return (NULL);
-	while (array[count] != NULL)
+	count = -1;
+	if (ft_strlen(src) < n)
 	{
-		ret[count] = ft_strdup(array[count]);
-		count++;
+		if (!(ret = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
+			return (NULL);
 	}
-	ret[count] = NULL;
+	else
+	{
+		if (!(ret = malloc(sizeof(char) * n + 1)))
+			return (NULL);
+	}
+	while (src[++count] != '\0' && count < n)
+		ret[count] = src[count];
+	ret[count] = '\0';
 	return (ret);
 }

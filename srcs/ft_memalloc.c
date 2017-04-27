@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 01:23:19 by ddinaut           #+#    #+#             */
-/*   Updated: 2016/11/16 19:43:47 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/27 16:11:19 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memalloc(size_t size)
 
 	if (!(ptr = malloc(size)))
 		return (NULL);
-	while (size--)
+	while (size-- > 0)
 		ptr[size] = '\0';
 	return (ptr);
 }

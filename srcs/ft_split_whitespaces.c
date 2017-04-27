@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:15:00 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/27 15:36:21 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/27 16:23:55 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,14 @@ char			**ft_split_whitespaces(char *str)
 	j = 0;
 	taille = 0;
 	nbmot = nbr_mots(str);
-	tab = (char**)malloc(sizeof(char*) * (nbmot + 1));
+	if (!(tab = (char**)malloc(sizeof(char*) * (nbmot + 1))))
+		return (NULL);
 	while (j < nbmot)
 	{
 		while ((delimiteurs(str[i])))
 			i++;
 		taille = ft_count(&str[i]);
-		tab[j] = (char*)malloc(sizeof(char) * (taille));
-		tab[j] = ft_strncpy(tab[j], str + i, taille);
-		tab[j][taille] = '\0';
+		tab[j] = ft_strndup(str + i, taille);
 		i += taille;
 		j++;
 	}

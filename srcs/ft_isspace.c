@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 12:19:02 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/27 16:43:05 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/04/27 14:44:11 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/04/27 14:50:30 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_array_cpy(const char **array)
+int		ft_isspace(int c)
 {
-	int		count;
-	char	**ret;
-
-	count = 0;
-	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(array) + 1)))
-		return (NULL);
-	while (array[count] != NULL)
-	{
-		ret[count] = ft_strdup(array[count]);
-		count++;
-	}
-	ret[count] = NULL;
-	return (ret);
+	if ((c == ' ') || (c == '\t') || (c == '\n'))
+		return (1);
+	return (0);
 }

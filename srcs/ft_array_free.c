@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 19:24:33 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/25 16:49:43 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/04/27 18:47:17 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	ft_array_free(char ***array)
 {
 	int count;
+	int max;
 
 	count = 0;
-	while ((*array)[count] != NULL)
+	max = ft_array_len((const char **)*array);
+	if (array != NULL)
 	{
-		free((*array)[count]);
-		count++;
+		while ((*array)[count] != NULL && count < max)
+			ft_memdel((void*)&(*array)[count++]);
+		ft_memdel((void**)(*array));
 	}
-	free(*array);
-	*array = NULL;
 }
