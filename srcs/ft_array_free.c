@@ -22,7 +22,10 @@ void	ft_array_free(char ***array)
 	if (array != NULL)
 	{
 		while ((*array)[count] != NULL && count < max)
-			ft_memdel((void*)&(*array)[count++]);
-		ft_memdel((void**)(*array));
+		{
+			ft_memdel((void*)&(*array)[count]);
+			count++;
+		}
+		ft_memdel((void**)&(*array));
 	}
 }

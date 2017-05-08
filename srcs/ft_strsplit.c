@@ -79,7 +79,7 @@ char			**ft_strsplit(const char *s, char c)
 	i = 0;
 	j = 0;
 	taille = 0;
-	if (s == 0)
+	if (s == NULL)
 		return (NULL);
 	if (!(ret = (char**)malloc(sizeof(char*) * ((nbr_mots(s, c)) + 1))))
 		return (NULL);
