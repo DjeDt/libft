@@ -81,7 +81,7 @@ char			**ft_strsplit(const char *s, char c)
 	taille = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(ret = (char**)malloc(sizeof(char*) * ((nbr_mots(s, c)) + 1))))
+	if (!(ret = (char**)malloc(sizeof(char*) * ((nbr_mots(s, c) + 1)))))
 		return (NULL);
 	while (j < (nbr_mots(s, c)))
 	{
@@ -93,6 +93,6 @@ char			**ft_strsplit(const char *s, char c)
 		i += taille;
 		j++;
 	}
-	ret[j] = 0;
+	ret[j] = NULL;
 	return (ret);
 }
