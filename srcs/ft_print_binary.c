@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 17:36:29 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/03/27 17:39:34 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/05/11 19:14:52 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_print_binary(unsigned int n)
 {
-	int			count;
-	unsigned int bit;
-	unsigned int mask;
+	int				count;
+	unsigned int	bit;
+	unsigned int	mask;
 
 	bit = 0;
 	mask = 1;

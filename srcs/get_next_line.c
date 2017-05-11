@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:30:51 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/05/08 23:48:25 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/05/11 19:13:31 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,3 @@ int		get_next_line(const int fd, char **line)
 		save = ft_strsub(ft_strchr(save, '\n'), 1, ft_strlen(save));
 	return ((ret > 1) ? (1) : ret);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

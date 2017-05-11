@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/05/08 20:08:21 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/05/11 19:26:43 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_fl(char const *s1, char const *s2);
 char				*ft_strjoin_fr(char const *s1, char const *s2);
-char				*ft_strjoin_fb(char const *s1, char const *s2);
+char				*ft_strjoin_fb(char *s1, char *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
