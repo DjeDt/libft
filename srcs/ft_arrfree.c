@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-void	ft_array_free(char ***array)
+void	ft_arrfree(char ***array)
 {
 	int count;
 	int max;
 
 	count = 0;
-	max = ft_array_len((const char **)*array);
+	max = ft_arrlen((const char **)*array);
 	if (array != NULL)
 	{
 		while ((*array)[count] != NULL && count < max)

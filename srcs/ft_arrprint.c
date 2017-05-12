@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_join.c                                    :+:      :+:    :+:   */
+/*   ft_tabprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/11 17:21:56 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/05/11 19:15:20 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/03/23 12:52:11 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/04/25 17:06:44 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_array_join(char **base, char *add)
+void	ft_arrprint(const char **tab)
 {
-	int		count;
-	char	**ret;
+	size_t	count;
 
-	if (!(ret = (char**)malloc(sizeof(char*) * \
-						ft_array_len((const char **)base) + 1)))
-		return (NULL);
 	count = -1;
-	while (base[++count] != NULL)
-		ret[count] = base[count];
-	ret[count++] = ft_strdup(add);
-	ret[count] = NULL;
-	return (ret);
+	if (tab == NULL)
+		return ;
+	while (tab[++count])
+		ft_putendl(tab[count]);
 }

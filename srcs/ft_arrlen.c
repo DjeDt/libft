@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
+/*   ft_array_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/23 12:19:02 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/27 16:43:05 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/05/11 19:13:41 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/05/11 19:26:24 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_array_cpy(const char **array)
+size_t	ft_arrlen(const char **array)
 {
-	int		count;
-	char	**ret;
+	size_t count;
 
 	count = 0;
-	if (!(ret = (char**)malloc(sizeof(char*) * ft_array_len(array) + 1)))
-		return (NULL);
+	if (array == NULL)
+		return (0);
 	while (array[count] != NULL)
-	{
-		ret[count] = ft_strdup(array[count]);
 		count++;
-	}
-	ret[count] = NULL;
-	return (ret);
+	return (count);
 }

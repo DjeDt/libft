@@ -85,11 +85,12 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
 
-char				**ft_array_cpy(const char **array);
-char				**ft_array_join(char **array, char *add);
-void				ft_array_print(const char **array);
-void				ft_array_free(char ***array);
-size_t				ft_array_len(const char **array);
+char				**ft_arrcpy(char **dst, const char **src);
+char				**ft_arrdup(const char **array);
+char				**ft_arrjoin(char **array, char *add);
+void				ft_arrprint(const char **array);
+void				ft_arrfree(char ***array);
+size_t				ft_arrlen(const char **array);
 char				**ft_split_whitespaces(char *str);
 
 void				ft_bzero(void *s, size_t n);
@@ -112,10 +113,3 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					get_next_line(const int fd, char **line);
 
 #endif
-
-
-
-
-
-
-
