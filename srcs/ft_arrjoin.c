@@ -18,7 +18,7 @@ char	**ft_arrjoin(char **base, char *add)
 	char	**ret;
 
 	if (!(ret = (char**)malloc(sizeof(char*) * \
-							   ft_arrlen((const char **)base) + 1)))
+						ft_arrlen((const char **)base) + 1)))
 		return (NULL);
 	count = -1;
 	while (base[++count] != NULL)
