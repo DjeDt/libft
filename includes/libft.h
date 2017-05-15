@@ -39,6 +39,7 @@ void				ft_print_binary(unsigned int n);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, char c);
+int					ft_count_char(const char *str, const char c);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
 char				*ft_strdup(const char *src);
