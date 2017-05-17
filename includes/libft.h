@@ -86,6 +86,7 @@ int					ft_atoi(const char *str);
 
 char				**ft_arrcpy(char **dst, const char **src);
 char				**ft_arrdup(const char **array);
+char				**ft_arrldup(const char **arr, size_t max);
 char				**ft_arrjoin(char **array, char *add);
 void				ft_arrprint(const char **array);
 void				ft_arrfree(char ***array);

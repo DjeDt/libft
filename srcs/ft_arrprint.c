@@ -19,6 +19,6 @@ void	ft_arrprint(const char **tab)
 	count = -1;
 	if (tab == NULL)
 		return ;
-	while (tab[++count])
+	while (tab[++count] != NULL)
 		ft_putendl(tab[count]);
 }
