@@ -18,14 +18,14 @@ void	ft_arrfree(char ***array)
 	int max;
 
 	count = 0;
-	max = ft_arrlen((const char **)*array);
 	if (array != NULL)
 	{
+		max = ft_arrlen((const char **)*array);
 		while ((*array)[count] != NULL && count < max)
 		{
 			ft_memdel((void*)&(*array)[count]);
 			count++;
 		}
-		ft_memdel((void**)&(*array));
+		ft_memdel((void**)array);
 	}
 }
