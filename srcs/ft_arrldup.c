@@ -13,7 +13,7 @@ char	**ft_arrldup(const char **arr, size_t max)
 		ret = (char**)malloc(sizeof(char*) * max + 1);
 	if (ret == NULL)
 		ft_putendl("malloc_error");
-	while (arr[count] != NULL && count < max)
+	while ((arr[count] != NULL) && (count < max))
 	{
 		ret[count] = ft_strdup(arr[count]);
 		count++;
