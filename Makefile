@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/04/27 16:05:24 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/06/04 00:10:14 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,13 +24,14 @@ SRC_PATH = srcs
 INC_PATH = includes/
 
 # Colors #
-COL_BLACK  = \033[1;30m
-COL_RED    = \033[1;31m
-COL_GREEN  = \033[1;32m
-COL_YELLOW = \033[1;33m
-COL_BLUE   = \033[1;34m
-COL_PURPLE = \033[1;35m
-COL_WHITE  = \033[1;37m
+COL_BLACK	= \033[1;30m
+COL_RED		= \033[1;31m
+COL_GREEN	= \033[1;32m
+COL_YELLOW	= \033[1;33m
+COL_BLUE	= \033[1;34m
+COL_PURPLE	= \033[1;35m
+COL_WHITE	= \033[1;37m
+END_COL		= \033[0;m
 
 AR	= ar rc $(NAME)
 RAN = ranlib $(NAME)
@@ -64,22 +65,14 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
 
 all: $(NAME)
 
-#$(NAME): logo $(OBJ)
-$(NAME): logo $(OBJ)
+$(NAME): $(OBJ)
 	@$(AR) $(OBJ)
 	@$(RAN)
 
 $(OBJ): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) -o $@ $(FLAGS) $(E_FLAGS) $(INC) -c $<
-	@printf "$(COL_GREEN)%s -> %s                            \r" $@ $<
-
-#logo:
-#	@printf " _    _  ___  ___  ___ \n"
-#	@printf "| |  | || . >| __||_ _|\n"
-#	@printf "| |_ | || . \| _|  | | \n"
-#	@printf "|___||_||___/|_|   |_| \n"
-#	@printf "                       \n"
+	@printf "$(COL_GREEN)%s -> %s                            \r$(END_COL)" $@ $<
 
 clean:
 	@/bin/rm -rf $(OBJ_PATH)
