@@ -23,6 +23,15 @@ OBJ_PATH = obj
 SRC_PATH = srcs
 INC_PATH = includes/
 
+# Sub_dirs #
+STR = str/
+MEM = mem/
+ARRAY = array/
+LIST = list/
+CONV = conversion/
+PRINT = print/
+UTIL = utils/
+
 # Colors #
 COL_BLACK	= \033[1;30m
 COL_RED		= \033[1;31m
@@ -40,22 +49,23 @@ INC = -I $(INC_PATH)
 # Sources #
 SRCS = \
 \
-	ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c \
-	ft_putstr_fd.c ft_print_binary.c \
+	$(PRINT)ft_putchar.c $(PRINT)ft_putchar_fd.c $(PRINT)ft_putendl.c $(PRINT)ft_putendl_fd.c $(PRINT)ft_putnbr.c $(PRINT)ft_putnbr_fd.c $(PRINT)ft_putstr.c \
+	$(PRINT)ft_putstr_fd.c $(PRINT)ft_print_binary.c \
 \
-	ft_strcat.c ft_strchr.c ft_strreplace.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strndup.c \
-	ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strjoin_fl.c ft_strjoin_fr.c ft_strjoin_fb.c ft_strlcat.c \
-	ft_strlen.c ft_strnlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
-	ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_isalpha.c \
-	ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_isspace.c ft_count_char.c \
+	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c $(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \
+	$(STR)ft_strequ.c $(STR)ft_striter.c $(STR)ft_striteri.c $(STR)ft_strjoin.c $(STR)ft_strjoin_fl.c $(STR)ft_strjoin_fr.c $(STR)ft_strjoin_fb.c $(STR)ft_strlcat.c \
+	$(STR)ft_strlen.c $(STR)ft_strnlen.c $(STR)ft_strmap.c $(STR)ft_strmapi.c $(STR)ft_strncat.c $(STR)ft_strncmp.c $(STR)ft_strncpy.c $(STR)ft_strnequ.c $(STR)ft_strnew.c \
+	$(STR)ft_strnstr.c $(STR)ft_strrchr.c $(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c \
 \
-	ft_memcpy.c ft_memccpy.c ft_memset.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_memalloc.c ft_memdel.c ft_bzero.c \
+	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c $(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \
 \
-	ft_arrdup.c ft_arrjoin.c ft_arrprint.c ft_arrfree.c ft_arrlen.c ft_split_whitespaces.c ft_arrldup.c \
+	$(MEM)ft_memcpy.c $(MEM)ft_memccpy.c $(MEM)ft_memset.c $(MEM)ft_memmove.c $(MEM)ft_memchr.c $(MEM)ft_memcmp.c $(MEM)ft_memalloc.c $(MEM)ft_memdel.c \
 \
-	ft_itoa.c ft_itoa_base.c ft_atoi.c \
+	$(ARRAY)ft_arrdup.c $(ARRAY)ft_arrjoin.c $(ARRAY)ft_arrprint.c $(ARRAY)ft_arrfree.c $(ARRAY)ft_arrlen.c $(ARRAY)ft_split_whitespaces.c $(ARRAY)ft_arrldup.c \
 \
-	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c get_next_line.c
+	$(CONV)ft_itoa.c $(CONV)ft_itoa_base.c $(CONV)ft_atoi.c \
+\
+	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c $(LIST)ft_lstmap.c $(LIST)ft_lstnew.c 
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
