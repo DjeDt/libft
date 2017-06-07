@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_get_line(char *buffer)
+static char	*ft_get_line(char *buffer)
 {
 	int		count;
 	char	*tmp;
@@ -32,14 +32,14 @@ char	*ft_get_line(char *buffer)
 	return (NULL);
 }
 
-int		ft_get_save(char **line, char **save)
+static int	ft_get_save(char **line, char **save)
 {
 	(*line) = ft_get_line(*save);
 	(*save) = ft_strsub(ft_strchr((*save), '\n'), 1, ft_strlen(*save));
 	return (1);
 }
 
-int		ft_check_return(char **save, char **line, int ret)
+static int	ft_check_return(char **save, char **line, int ret)
 {
 	int		count;
 
@@ -60,7 +60,7 @@ int		ft_check_return(char **save, char **line, int ret)
 	return (1);
 }
 
-int		get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	int			ret;
 	static char	*save = NULL;
@@ -79,6 +79,7 @@ int		get_next_line(const int fd, char **line)
 			return (ft_check_return(&save, line, ret));
 		(*line)[ret] = '\0';
 		save = ft_strjoin_fl(save, (*line));
+		*line != NULL ? ft_strdel(line) : NULL;
 	}
 	(*line) = ft_get_line(save);
 	if ((ft_strchr(save, '\n')) != 0)
