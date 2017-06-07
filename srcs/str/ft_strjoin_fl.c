@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freestrjoin.c                                   :+:      :+:    :+:   */
+/*   ft_strjoin_fl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,32 +12,11 @@
 
 #include "libft.h"
 
-static char	*ft_ret(char const *s1, char const *s2)
+char		*ft_strjoin_fl(char *s1, const char *s2)
 {
-	if (s1 == NULL)
-		return (ft_strdup(s2));
-	else
-		return (ft_strdup(s1));
-}
+	char	*ret;
 
-char		*ft_strjoin_fl(char const *s1, char const *s2)
-{
-	char	*join;
-	size_t	i;
-	size_t	a;
-
-	if (s1 == NULL || s2 == NULL)
-		return (ft_ret(s1, s2));
-	a = ft_strlen(s1);
-	if (!(join = (char*)malloc(sizeof(char) * (a + ft_strlen(s2) + 1))))
-		return (NULL);
-	i = -1;
-	while (s1[++i] != '\0')
-		join[i] = s1[i];
-	i = -1;
-	while (s2[++i] != '\0')
-		join[a + i] = s2[i];
-	join[a + i] = '\0';
-	ft_memdel((void*)&s1);
-	return (join);
+	ret = ft_strjoin(s1, s2);
+	ft_strdel(&s1);
+	return (ret);
 }

@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+static char	*strjoin_reloaded(char **s1, const char *s2)
+{
+	char *ret;
+
+	ret = ft_strjoin(*s1, s2);
+	ft_strdel(s1);
+//	s1 = NULL;
+	return (ret);
+}
+
 static char	*ft_get_line(char *buffer)
 {
 	int		count;
@@ -47,6 +57,7 @@ static int	ft_check_return(char **save, char **line, int ret)
 	if (ret < 0)
 	{
 		ft_memdel((void**)save);
+		ft_memdel((void**)line);
 		return (-1);
 	}
 	count = ft_strlen(*save);
@@ -78,9 +89,9 @@ int			get_next_line(const int fd, char **line)
 		if ((ret = read(fd, (*line), BUFF_SIZE)) < 1)
 			return (ft_check_return(&save, line, ret));
 		(*line)[ret] = '\0';
-		save = ft_strjoin_fl(save, (*line));
-		*line != NULL ? ft_strdel(line) : NULL;
+		save = strjoin_reloaded(&save, (*line));
 	}
+	line != NULL ? ft_strdel(line) : NULL;
 	(*line) = ft_get_line(save);
 	if ((ft_strchr(save, '\n')) != 0)
 		save = ft_strsub(ft_strchr(save, '\n'), 1, ft_strlen(save));
