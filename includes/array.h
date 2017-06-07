@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   array.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/07 12:07:19 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/07 12:07:20 by ddinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef ARRAY_H
 # define ARRAY_H
@@ -11,4 +22,4 @@ void	ft_arrfree(char ***array);
 size_t	ft_arrlen(const char **array);
 char	**ft_split_whitespaces(char *str);
 
-#endif 
+#endif
