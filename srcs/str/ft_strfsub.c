@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strfsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 03:03:55 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/08 15:14:22 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/08 15:13:24 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/08 15:28:52 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strfsub(char *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*ret;
@@ -30,6 +30,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 			start++;
 		}
 		ret[i] = '\0';
+		ft_strdel(&s);
 	}
 	return (ret);
 }

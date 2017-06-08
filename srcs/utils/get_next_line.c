@@ -6,21 +6,11 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:30:51 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/05/11 19:13:31 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/06/08 15:32:07 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*strjoin_reloaded(char **s1, const char *s2)
-{
-	char *ret;
-
-	ret = ft_strjoin(*s1, s2);
-	ft_strdel(s1);
-//	s1 = NULL;
-	return (ret);
-}
 
 static char	*ft_get_line(char *buffer)
 {
@@ -45,7 +35,7 @@ static char	*ft_get_line(char *buffer)
 static int	ft_get_save(char **line, char **save)
 {
 	(*line) = ft_get_line(*save);
-	(*save) = ft_strsub(ft_strchr((*save), '\n'), 1, ft_strlen(*save));
+	(*save) = ft_strfsub(*save, ft_strnlen(*save, '\n') + 1, ft_strlen(*save));
 	return (1);
 }
 
@@ -89,11 +79,11 @@ int			get_next_line(const int fd, char **line)
 		if ((ret = read(fd, (*line), BUFF_SIZE)) < 1)
 			return (ft_check_return(&save, line, ret));
 		(*line)[ret] = '\0';
-		save = strjoin_reloaded(&save, (*line));
+		save = ft_strjoin_fl(save, *line);
 	}
-	line != NULL ? ft_strdel(line) : NULL;
+	*line != NULL ?	ft_strdel(line) : NULL;
 	(*line) = ft_get_line(save);
 	if ((ft_strchr(save, '\n')) != 0)
-		save = ft_strsub(ft_strchr(save, '\n'), 1, ft_strlen(save));
+		save = ft_strfsub(save, ft_strnlen(save, '\n') + 1, ft_strlen(save));
 	return ((ret > 1) ? (1) : ret);
 }
