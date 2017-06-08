@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/06/08 15:16:45 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/06/08 21:47:27 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -61,7 +61,7 @@ SRCS = \
 \
 	$(MEM)ft_memcpy.c $(MEM)ft_memccpy.c $(MEM)ft_memset.c $(MEM)ft_memmove.c $(MEM)ft_memchr.c $(MEM)ft_memcmp.c $(MEM)ft_memalloc.c $(MEM)ft_memdel.c \
 \
-	$(ARRAY)ft_arrdup.c $(ARRAY)ft_arrjoin.c $(ARRAY)ft_arrprint.c $(ARRAY)ft_arrfree.c $(ARRAY)ft_arrlen.c $(ARRAY)ft_split_whitespaces.c $(ARRAY)ft_arrldup.c \
+	$(ARRAY)ft_arrdup.c $(ARRAY)ft_arrjoin.c $(ARRAY)ft_arrprint.c $(ARRAY)ft_arrfree.c $(ARRAY)ft_arrlen.c $(ARRAY)ft_split_whitespaces.c $(ARRAY)ft_arrldup.c $(ARRAY)ft_arrfjoin.c \
 \
 	$(CONV)ft_itoa.c $(CONV)ft_itoa_base.c $(CONV)ft_atoi.c \
 \
