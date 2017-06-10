@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 17:21:56 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/08 21:49:23 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/06/10 15:23:40 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	**ft_arrfjoin(char **base, char **add)
 	int		count2;
 	char	**ret;
 
-	if (!(ret = (char**)malloc(sizeof(char*) * (ft_arrlen((const char **)base) + ft_arrlen((const char **)add) + 1))))
+	if (!(ret = (char**)malloc(sizeof(char*) * \
+							(ft_arrlen((const char **)base) + \
+							ft_arrlen((const char **)add) + 1))))
 		return (NULL);
 	count = 0;
 	count2 = 0;

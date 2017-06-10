@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:30:51 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/08 15:32:07 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/06/10 15:22:05 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			get_next_line(const int fd, char **line)
 		(*line)[ret] = '\0';
 		save = ft_strjoin_fl(save, *line);
 	}
-	*line != NULL ?	ft_strdel(line) : NULL;
+	*line != NULL ? ft_strdel(line) : NULL;
 	(*line) = ft_get_line(save);
 	if ((ft_strchr(save, '\n')) != 0)
 		save = ft_strfsub(save, ft_strnlen(save, '\n') + 1, ft_strlen(save));
