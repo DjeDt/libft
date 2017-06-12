@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/17 14:14:43 by ddinaut           #+#    #+#              #
-#    Updated: 2017/06/08 19:51:28 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/06/12 18:47:06 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -49,7 +49,13 @@ SRCS =	main.c \
 		btree_apply_prefix.c \
 		btree_apply_infix.c \
 		btree_apply_suffix.c \
-		btree_insert_data.c
+		btree_insert_data.c \
+		btree_search_item.c \
+		btree_lvl_count.c \
+		btree_apply_by_lvl.c \
+		count_node.c \
+\
+		rb_insert.c
 
 # Rules #
 .PHONY: all norme clean fclean re

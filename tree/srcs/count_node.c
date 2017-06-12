@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
+/*   count_node.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/12 16:47:50 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/12 16:47:51 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/12 16:48:03 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/12 16:48:04 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tree.h"
 
-void	btree_apply_prefix(t_btree *root, void(*applyf)(void *))
+int		count_node(t_btree *tr)
 {
-	if (root != NULL)
-	{
-		applyf(root->item);
-		btree_apply_prefix(root->left, applyf);
-		btree_apply_prefix(root->right, applyf);
-	}
+	int	count;
+
+	if (tr == NULL)
+		return (0);
+	count = 0;
+	return (count_node(tr->left) + count_node(tr->right) + (++count));
 }

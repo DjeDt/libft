@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
+/*   rb_insert.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/12 16:47:50 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/12 16:47:51 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/12 18:44:01 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/12 20:40:16 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tree.h"
 
-void	btree_apply_prefix(t_btree *root, void(*applyf)(void *))
+int		check_color(struct s_rb_mode **root)
 {
-	if (root != NULL)
+	if (*root != NULL)
 	{
-		applyf(root->item);
-		btree_apply_prefix(root->left, applyf);
-		btree_apply_prefix(root->right, applyf);
+		if (*root->parent)
+		check_color(*root->left);
+		check_color(*root->right);
+	}
+}
+
+void	rb_insert(struct s_rb_mode **root, void *data, int (*f)(void *, void *))
+{
+	if (*root == NULL)
+	{
+		btree_insert_data(root, data, f);
+		*root->color = RB_BLACK;
 	}
 }
