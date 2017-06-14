@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 
+
 int getLevelCount(t_rb_node *node)
 {
 	int l;
@@ -34,7 +35,7 @@ int getLevelCount(t_rb_node *node)
 void printLevel(t_rb_node *node, int level)
 {
     if (node != NULL && level == 0)
-        printf("%s  ", node->data);
+        printf("%s  ", (char*)node->data);
     else if (node != NULL)
     {
 		printLevel(node->left, level - 1);
@@ -56,27 +57,58 @@ void printElements(t_rb_node *node)
 	}
 }
 
+
 int		main(void)
 {
 	t_rb_node *tr;
 	t_btree *test;
+//	int i = getLevelCount(tr);
 
 	tr = NULL;
 	test = NULL;
 
-	rb_insert(&tr, "10", (void *)&ft_strcmp);
-	rb_insert(&tr, "3", (void *)&ft_strcmp);
-	rb_insert(&tr, "478", (void *)&ft_strcmp);
-	rb_insert(&tr, "657", (void *)&ft_strcmp);
-	rb_insert(&tr, "55", (void *)&ft_strcmp);
-	rb_insert(&tr, "6", (void *)&ft_strcmp);
-	rb_insert(&tr, "20", (void *)&ft_strcmp);
-	rb_insert(&tr, "2", (void *)&ft_strcmp);
-	rb_insert(&tr, "123", (void *)&ft_strcmp);
-	rb_insert(&tr, "8", (void *)&ft_strcmp);
-	rb_insert(&tr, "787", (void *)&ft_strcmp);
+//	(void)tr;
+//	(void)test;
 
+	rb_insert(&tr, "1", (void *)&ft_strcmp);
+	rb_insert(&tr, "2", (void *)&ft_strcmp);
+	rb_insert(&tr, "3", (void *)&ft_strcmp);
+	rb_insert(&tr, "4", (void *)&ft_strcmp);
+	rb_insert(&tr, "5", (void *)&ft_strcmp);
+	rb_insert(&tr, "6", (void *)&ft_strcmp);
+	rb_insert(&tr, "7", (void *)&ft_strcmp);
+	rb_insert(&tr, "8", (void *)&ft_strcmp);
+	rb_insert(&tr, "9", (void *)&ft_strcmp);
+	rb_insert(&tr, "10", (void *)&ft_strcmp);
+	rb_insert(&tr, "11", (void *)&ft_strcmp);
+
+	btree_insert_data(&test, "1", (void *)&ft_strcmp);
+	btree_insert_data(&test, "2", (void *)&ft_strcmp);
+	btree_insert_data(&test, "3", (void *)&ft_strcmp);
+	btree_insert_data(&test, "4", (void *)&ft_strcmp);
+	btree_insert_data(&test, "5", (void *)&ft_strcmp);
+	btree_insert_data(&test, "6", (void *)&ft_strcmp);
+	btree_insert_data(&test, "7", (void *)&ft_strcmp);
+	btree_insert_data(&test, "8", (void *)&ft_strcmp);
+	btree_insert_data(&test, "9", (void *)&ft_strcmp);
+	btree_insert_data(&test, "10", (void *)&ft_strcmp);
+	btree_insert_data(&test, "11", (void *)&ft_strcmp);
+/*
+	btree_insert_data(&test, "1", (void*)&ft_strcmp);
+	btree_insert_data(&test, "2", (void*)&ft_strcmp);
+	btree_insert_data(&test, "3", (void*)&ft_strcmp);
+	btree_insert_data(&test, "4", (void*)&ft_strcmp);
+	btree_insert_data(&test, "5", (void*)&ft_strcmp);
+	btree_insert_data(&test, "6", (void*)&ft_strcmp);
+	btree_insert_data(&test, "7", (void*)&ft_strcmp);
+	btree_insert_data(&test, "8", (void*)&ft_strcmp);
+*/
+//	ft_putendl("tr = ");
 //	btree_apply_infix((t_btree*)tr, (void *)ft_putendl);
+//	ft_putstr("\n\n test = \n");
+//	btree_apply_infix(test, (void *)ft_putendl);
 	printElements(tr);
+	ft_putstr("\n\n");
+	printElements((t_rb_node*)test);
 	return (0);
 }

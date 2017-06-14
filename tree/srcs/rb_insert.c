@@ -64,5 +64,5 @@ t_rb_node	*uncle(t_rb_node *node)
 void	rb_insert(struct s_rb_node **root, void *data, int (*f)(void *, void *))
 {
 	btree_insert_data((t_btree**)root, data, f);
-	insert_case1((t_rb_node*)(*root));
+	insert_case1((*root));
 }
