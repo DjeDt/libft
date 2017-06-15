@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create_node.c                                :+:      :+:    :+:   */
+/*   btree_insert_data.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/13 16:56:34 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/13 16:56:35 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/13 15:12:47 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/15 17:06:33 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tree.h"
 
-t_btree		*btree_create_node(void *item)
+void			btree_insert_data(t_btree **root, void *item, int (*cmpf)
+						  (void *, void *))
 {
-	t_btree *new;
-
-	if (!(new = (t_btree*)malloc(sizeof(t_btree))))
-		return (NULL);
+	if (item == NULL)
+		return ;
+	if ((*root) == NULL)
+		(*root) = btree_create_node(item);
+	else if ((*cmpf)(item, (*root)->item) < 0)
+	{
+		btree_insert_data(&(*root)->left, item, cmpf);
+		(*root)->left->root = (*root);
+	}
 	else
 	{
-		new->left = NULL;
-		new->right = NULL;
-//		new->root = NULL;
-		new->item = item;
+		btree_insert_data(&(*root)->right, item, cmpf);
+		(*root)->right->root = (*root);
 	}
-	return (new);
 }

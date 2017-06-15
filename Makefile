@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/06/08 21:47:27 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/06/15 14:55:28 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -31,6 +31,7 @@ LIST = list/
 CONV = conversion/
 PRINT = print/
 UTIL = utils/
+TREE = tree/
 
 # Colors #
 COL_BLACK	= \033[1;30m
@@ -65,7 +66,10 @@ SRCS = \
 \
 	$(CONV)ft_itoa.c $(CONV)ft_itoa_base.c $(CONV)ft_atoi.c \
 \
-	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c $(LIST)ft_lstmap.c $(LIST)ft_lstnew.c
+	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c $(LIST)ft_lstmap.c $(LIST)ft_lstnew.c \
+\
+	$(TREE)btree_apply_by_lvl.c $(TREE)btree_apply_infix.c $(TREE)btree_apply_prefix.c $(TREE)btree_apply_suffix.c $(TREE)btree_create_node.c $(TREE)btree_insert_data.c \
+	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c $(TREE)insert_case.c $(TREE)rb_insert.c
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))

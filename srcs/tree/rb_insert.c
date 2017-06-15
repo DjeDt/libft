@@ -6,38 +6,26 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/12 18:44:01 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/13 20:08:26 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/06/15 18:19:59 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tree.h"
 #include "rb_tree.h"
+#include <stdio.h>
 
-
-void	rotate_left(t_rb_node *node, t_rb_node *gp)
+void	rotate_left(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n)
 {
-	t_rb_node *save_gp_l;
-	t_rb_node *save_node_l;
-
-	save_gp_l = gp->left;
-	save_node_l = node->left;
-
-	gp->left = node;
-	node->left = save_gp_l;
-	save_gp_l->right = save_node_l;
+	node->left = node;
+	node->left = save_p;
+	save_p->right = save_n;
 }
 
-void	rotate_right(t_rb_node *node, t_rb_node *gp)
+void	rotate_right(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n)
 {
-	t_rb_node *save_gp_r;
-	t_rb_node *save_node_r;
-
-	save_gp_r = gp->right;
-	save_node_r = node->right;
-
-	gp->right = node;
-	node->right = save_gp_r;
-	save_gp_r->left = save_node_r;
+	node->right = node;
+	node->right =  save_p;
+	save_p->left = save_n;
 }
 
 t_rb_node	*grandparent(t_rb_node *node)
@@ -60,9 +48,43 @@ t_rb_node	*uncle(t_rb_node *node)
 		return (gp->left);
 }
 
+t_rb_node	*rb_create(void *data)
+{
+	t_rb_node *new;
+
+	if (!(new = (t_rb_node*)malloc(sizeof(t_rb_node))))
+		return (NULL);
+	else
+	{
+		new->left = NULL;
+		new->right = NULL;
+		new->parent = NULL;
+		new->data = data;
+		new->color = RB_BLACK;
+	}
+	return (new);
+}
 
 void	rb_insert(struct s_rb_node **root, void *data, int (*f)(void *, void *))
 {
-	btree_insert_data((t_btree**)root, data, f);
+	if (data == NULL)
+		return ;
+	if ((*root) == NULL)
+	{
+		(*root) = rb_create(data);
+		insert_case1((*root));
+	}
+	else if ((*f)(data, (*root)->data) < 0)
+	{
+		rb_insert(&(*root)->left, data, f);
+		(*root)->left->parent = (*root);
+		insert_case1((*root));
+	}
+	else
+	{
+		rb_insert(&(*root)->right, data, f);
+		(*root)->right->parent = (*root);
+		insert_case1((*root));
+	}
 	insert_case1((*root));
 }

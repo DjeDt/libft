@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/08 15:15:04 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/06/15 14:49:09 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include "list.h"
 # include "utils.h"
 # include "mem.h"
+# include "tree.h"
+# include "rb_tree.h"
 
 size_t		ft_strlen(const char *str);
 size_t		ft_strnlen(const char *str, char c);
