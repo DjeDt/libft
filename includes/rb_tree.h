@@ -30,6 +30,8 @@ typedef struct			s_rb_node
 	enum	e_rb_color	color;
 }						t_rb_node;
 
+t_rb_node				*rb_create(void);
+t_rb_node				*new_node(void *data , int node_color, t_rb_node *left, t_rb_node *right);
 void					rb_insert(t_rb_node **root, void *data, int (*f)(void *, void *));
 void					insert_case1(t_rb_node *node);
 void					insert_case2(t_rb_node *node);

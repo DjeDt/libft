@@ -48,23 +48,7 @@ t_rb_node	*uncle(t_rb_node *node)
 		return (gp->left);
 }
 
-t_rb_node	*rb_create(void *data)
-{
-	t_rb_node *new;
-
-	if (!(new = (t_rb_node*)malloc(sizeof(t_rb_node))))
-		return (NULL);
-	else
-	{
-		new->left = NULL;
-		new->right = NULL;
-		new->parent = NULL;
-		new->data = data;
-		new->color = RB_BLACK;
-	}
-	return (new);
-}
-
+/*
 void rb_insert(rbtree t, void* key, compare_func compare)
 {
     node inserted_node;
@@ -110,36 +94,43 @@ void rb_insert(rbtree t, void* key, compare_func compare)
     insert_case1(t, inserted_node);
     verify_properties(t);
 }
+*/
 
-void	rb_insert(struct s_rb_node **root, void *data, int (*f)(void *, void *))
+void	rb_insert(t_rb_node **root, void *data, int (*f)(void *, void *))
 {
-	t_rb_node *insert;
+	t_rb_node *new;
 
-
+	new = new_node(data, RB_RED, NULL, NULL);
+	if (new->color == RB_RED)
+		ft_putendl("red");
+	else
+		ft_putendl("black");
+	(void)f;
+	(*root) = new;
 }
 
 /*
-void	rb_insert(struct s_rb_node **root, void *data, int (*f)(void *, void *))
+void	rb_insert(t_rb_node **root, void *data, int (*f)(void *, void *))
 {
 	if (data == NULL)
 		return ;
 	if ((*root) == NULL)
 	{
-		(*root) = rb_create(data);
+		//(*root) = rb_create(data);
+		(*root) = (t_rb_node*)btree_create_node(data);
 		insert_case1((*root));
 	}
 	else if ((*f)(data, (*root)->data) < 0)
 	{
 		rb_insert(&(*root)->left, data, f);
-		(*root)->left->parent = (*root);
+//		(*root)->left->parent = (*root);
 		insert_case1((*root));
 	}
 	else
 	{
 		rb_insert(&(*root)->right, data, f);
-		(*root)->right->parent = (*root);
+//		(*root)->right->parent = (*root);
 		insert_case1((*root));
 	}
 	insert_case1((*root));
-}
-*/
+	}*/

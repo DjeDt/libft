@@ -69,7 +69,7 @@ SRCS = \
 	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c $(LIST)ft_lstmap.c $(LIST)ft_lstnew.c \
 \
 	$(TREE)btree_apply_by_lvl.c $(TREE)btree_apply_infix.c $(TREE)btree_apply_prefix.c $(TREE)btree_apply_suffix.c $(TREE)btree_create_node.c $(TREE)btree_insert_data.c \
-	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c $(TREE)insert_case.c $(TREE)rb_insert.c
+	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c $(TREE)insert_case.c $(TREE)rb_insert.c $(TREE)rb_create.c
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
