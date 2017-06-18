@@ -18,11 +18,11 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	void	*tmp;
 
 	if (!(ret = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
+		malloc_error("error in func lstnew -> var [ret]", -1);
 	if ((void *)content && content_size > 0)
 	{
 		if (!(tmp = (void*)malloc(sizeof(void))))
-			return (NULL);
+			malloc_error("error in func lstnew -> var [tmp]", -1);
 		ret->content_size = content_size;
 		while (content_size--)
 			*(unsigned char *)tmp++ = *(unsigned char *)content++;

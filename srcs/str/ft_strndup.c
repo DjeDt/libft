@@ -19,15 +19,11 @@ char	*ft_strndup(const char *src, size_t n)
 
 	count = 0;
 	if (ft_strlen(src) < n)
-	{
-		if (!(ret = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
-			return (NULL);
-	}
+		ret = (char*)malloc(sizeof(char) * ft_strlen(src) + 1);
 	else
-	{
-		if (!(ret = malloc(sizeof(char) * n + 1)))
-			return (NULL);
-	}
+		ret = malloc(sizeof(char) * n + 1);
+	if (ret == NULL)
+		malloc_error("error in func ft_strndup", -1);
 	while (src[count] != '\0' && count < n)
 	{
 		ret[count] = src[count];

@@ -56,7 +56,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_strfsub(char *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strjoin_fl(char *s1, const char *s2);
-char		*ft_strjoin_fr(char const *s1, char const *s2);
+char		*ft_strjoin_fr(char const *s1, char *s2);
 char		*ft_strjoin_fb(char *s1, char *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
@@ -64,5 +64,6 @@ void		ft_bzero(void *s, size_t n);
 char		*ft_itoa(int n);
 char		*ft_itoa_base(int value, int base);
 int			ft_atoi(const char *str);
+void		malloc_error(const char *str, const int ret);
 
 #endif

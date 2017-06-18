@@ -14,14 +14,14 @@
 
 char	*ft_strnew(size_t size)
 {
-	int		i;
+	size_t	i;
 	char	*str;
 
 	i = 0;
 	str = NULL;
 	if (!(str = ft_memalloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	while (str[i])
+		malloc_error("error in func ft_strnew", -1);
+	while (i < size)
 		str[i++] = '\0';
 	return (str);
 }

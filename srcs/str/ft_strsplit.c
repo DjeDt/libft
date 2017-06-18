@@ -48,7 +48,7 @@ char			**ft_strsplit(const char *s, char c)
 		return (NULL);
 	nbmot = nbr_mots(s, c);
 	if (!(ret = (char**)malloc(sizeof(char*) * nbmot + 1)))
-		return (NULL);
+		malloc_error("error in func ft_strsplit", -1);
 	while (++j < nbmot)
 	{
 		while (s[i] != '\0' && s[i] == c)

@@ -21,7 +21,7 @@ char	**ft_arrcpy(char **dst, const char **src)
 	while (src[count] != NULL)
 	{
 		if (!(dst[count] = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
-			return (NULL);
+			malloc_error("error in func arrcpy", -1);
 		count2 = 0;
 		while (src[count][count2] != '\0')
 		{

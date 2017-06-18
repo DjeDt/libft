@@ -17,7 +17,7 @@ void	*ft_memalloc(size_t size)
 	char *ptr;
 
 	if (!(ptr = malloc(size)))
-		return (NULL);
+		malloc_error("error in func memalloc", -1);
 	while (size-- > 0)
 		ptr[size] = '\0';
 	return (ptr);

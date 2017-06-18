@@ -19,7 +19,7 @@ char		**ft_arrdup(const char **array)
 
 	count = 0;
 	if (!(ret = (char**)malloc(sizeof(char*) * ft_arrlen(array) + 1)))
-		return (NULL);
+		malloc_error("error in func arrdup", -1);
 	while (array[count] != NULL)
 	{
 		ret[count] = ft_strdup(array[count]);

@@ -63,7 +63,7 @@ char			**ft_split_whitespaces(char *str)
 	taille = 0;
 	nbmot = nbr_mots(str);
 	if (!(tab = (char**)malloc(sizeof(char*) * (nbmot + 1))))
-		return (NULL);
+		malloc_error("error in func split_whitespaces", -1);
 	while (j < nbmot)
 	{
 		while ((delimiteurs(str[i])))

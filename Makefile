@@ -56,7 +56,7 @@ SRCS = \
 	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c $(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \
 	$(STR)ft_strequ.c $(STR)ft_striter.c $(STR)ft_striteri.c $(STR)ft_strjoin.c $(STR)ft_strjoin_fl.c $(STR)ft_strjoin_fr.c $(STR)ft_strjoin_fb.c $(STR)ft_strlcat.c \
 	$(STR)ft_strlen.c $(STR)ft_strnlen.c $(STR)ft_strmap.c $(STR)ft_strmapi.c $(STR)ft_strncat.c $(STR)ft_strncmp.c $(STR)ft_strncpy.c $(STR)ft_strnequ.c $(STR)ft_strnew.c \
-	$(STR)ft_strnstr.c $(STR)ft_strrchr.c $(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c $(STR)ft_strfsub.c \
+	$(STR)ft_strnstr.c $(STR)ft_strrchr.c $(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c $(STR)ft_strfsub.c $(STR)ft_malloc_error.c \
 \
 	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c $(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \
 \

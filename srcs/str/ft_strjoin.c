@@ -30,7 +30,7 @@ char				*ft_strjoin(char const *s1, char const *s2)
 		return (ft_ret(s1, s2));
 	a = ft_strlen(s1);
 	if (!(join = (char*)malloc(sizeof(char) * (a + ft_strlen(s2) + 1))))
-		return (NULL);
+		malloc_error("error in func ft_strjoin", -1);
 	i = -1;
 	while (s1[++i] != '\0')
 		join[i] = s1[i];

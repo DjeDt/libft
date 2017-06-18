@@ -73,7 +73,7 @@ int			get_next_line(const int fd, char **line)
 	if (save == NULL)
 		save = ft_strnew(0);
 	if (!((*line) = (char*)malloc(sizeof(char) * BUFF_SIZE + 1)))
-		return (-1);
+		malloc_error("error in func get_next_line", -1);
 	while (!(ft_strchr(save, '\n')))
 	{
 		if ((ret = read(fd, (*line), BUFF_SIZE)) < 1)

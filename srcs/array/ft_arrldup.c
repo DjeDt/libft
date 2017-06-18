@@ -24,7 +24,7 @@ char	**ft_arrldup(const char **arr, size_t max)
 	else
 		ret = (char**)malloc(sizeof(char*) * max + 1);
 	if (ret == NULL)
-		ft_putendl("malloc_error");
+		malloc_error("error in func arrldup", -1);
 	while ((arr[count] != NULL) && (count < max))
 	{
 		ret[count] = ft_strdup(arr[count]);

@@ -21,7 +21,7 @@ char	**ft_arrfjoin(char **base, char **add)
 	if (!(ret = (char**)malloc(sizeof(char*) * \
 							(ft_arrlen((const char **)base) + \
 							ft_arrlen((const char **)add) + 1))))
-		return (NULL);
+		malloc_error("error in ft_arrfjoin", -1);
 	count = 0;
 	count2 = 0;
 	while (base[count] != NULL)

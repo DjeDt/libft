@@ -40,7 +40,7 @@ char			*ft_strtrim(char const *s)
 		if (i > j)
 			return (ft_strnew(0));
 		if (!(ret = (char*)malloc(sizeof(char) * (j - i) + 2)))
-			return (NULL);
+			malloc_error("error in ft_strtrim", -1);
 		while (i <= j)
 			ret[k++] = s[i++];
 		ret[k] = '\0';

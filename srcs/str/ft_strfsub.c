@@ -22,7 +22,7 @@ char	*ft_strfsub(char *s, unsigned int start, size_t len)
 	if (s != NULL)
 	{
 		if (!(ret = (char*)malloc(sizeof(char) * (len + 1))))
-			return (NULL);
+			malloc_error("error in func strfsub", -1);
 		while (i < len)
 		{
 			ret[i] = s[start];

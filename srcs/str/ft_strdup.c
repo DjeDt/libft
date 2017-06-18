@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	if (!(ret = (char*)malloc(sizeof(char) * ft_strlen(s1) + 1)))
-		return (NULL);
+		malloc_error("error in func ft_strdup", -1);
 	while (s1[i] != '\0')
 	{
 		ret[i] = s1[i];

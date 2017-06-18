@@ -31,7 +31,7 @@ char		*ft_itoa_base(int value, int base)
 	count = ft_len(value, base);
 	str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	if (!(ret = (char*)malloc(sizeof(char) * (count + 1))))
-		return (NULL);
+		malloc_error("error in func itoa_base", -1);
 	ret[count] = '\0';
 	while (count--)
 	{
