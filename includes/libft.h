@@ -60,6 +60,7 @@ char		*ft_strjoin_fr(char const *s1, char *s2);
 char		*ft_strjoin_fb(char *s1, char *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
+char		**ft_strtok(const char *str, const char *delim);
 void		ft_bzero(void *s, size_t n);
 char		*ft_itoa(int n);
 char		*ft_itoa_base(int value, int base);
