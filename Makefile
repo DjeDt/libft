@@ -24,14 +24,14 @@ SRC_PATH = srcs
 INC_PATH = includes/
 
 # Sub_dirs #
-STR = str/
-MEM = mem/
-ARRAY = array/
-LIST = list/
-CONV = conversion/
-PRINT = print/
-UTIL = utils/
-TREE = tree/
+STR =	str/
+MEM =	mem/
+ARRAY =	array/
+LIST =	list/
+CONV =	conversion/
+PRINT =	print/
+UTIL =	utils/
+TREE =	tree/
 
 # Colors #
 COL_BLACK	= \033[1;30m
@@ -49,27 +49,37 @@ INC = -I $(INC_PATH)
 
 # Sources #
 SRCS = \
+	$(PRINT)ft_putchar.c $(PRINT)ft_putchar_fd.c $(PRINT)ft_putendl.c \
+	$(PRINT)ft_putendl_fd.c $(PRINT)ft_putnbr.c $(PRINT)ft_putnbr_fd.c \
+	$(PRINT)ft_putstr.c $(PRINT)ft_putstr_fd.c $(PRINT)ft_print_binary.c \
 \
-	$(PRINT)ft_putchar.c $(PRINT)ft_putchar_fd.c $(PRINT)ft_putendl.c $(PRINT)ft_putendl_fd.c $(PRINT)ft_putnbr.c $(PRINT)ft_putnbr_fd.c $(PRINT)ft_putstr.c \
-	$(PRINT)ft_putstr_fd.c $(PRINT)ft_print_binary.c \
+	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c \
+	$(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \
+	$(STR)ft_strequ.c $(STR)ft_striter.c $(STR)ft_striteri.c $(STR)ft_strjoin.c $(STR)ft_strjoin_fl.c \
+	$(STR)ft_strjoin_fr.c $(STR)ft_strjoin_fb.c $(STR)ft_strlcat.c $(STR)ft_strlen.c \
+	$(STR)ft_strnlen.c $(STR)ft_strmap.c $(STR)ft_strmapi.c $(STR)ft_strncat.c $(STR)ft_strncmp.c \
+	$(STR)ft_strncpy.c $(STR)ft_strnequ.c $(STR)ft_strnew.c $(STR)ft_strnstr.c $(STR)ft_strrchr.c \
+	$(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c \
+	$(STR)ft_strfsub.c $(STR)ft_malloc_error.c $(STR)ft_strtok.c \
 \
-	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c $(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \
-	$(STR)ft_strequ.c $(STR)ft_striter.c $(STR)ft_striteri.c $(STR)ft_strjoin.c $(STR)ft_strjoin_fl.c $(STR)ft_strjoin_fr.c $(STR)ft_strjoin_fb.c $(STR)ft_strlcat.c \
-	$(STR)ft_strlen.c $(STR)ft_strnlen.c $(STR)ft_strmap.c $(STR)ft_strmapi.c $(STR)ft_strncat.c $(STR)ft_strncmp.c $(STR)ft_strncpy.c $(STR)ft_strnequ.c $(STR)ft_strnew.c \
-	$(STR)ft_strnstr.c $(STR)ft_strrchr.c $(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c $(STR)ft_strfsub.c $(STR)ft_malloc_error.c $(STR)ft_strtok.c \
+	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c \
+	$(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \
 \
-	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c $(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \
+	$(MEM)ft_memcpy.c $(MEM)ft_memccpy.c $(MEM)ft_memset.c $(MEM)ft_memmove.c $(MEM)ft_memchr.c \
+	$(MEM)ft_memcmp.c $(MEM)ft_memalloc.c $(MEM)ft_memdel.c \
 \
-	$(MEM)ft_memcpy.c $(MEM)ft_memccpy.c $(MEM)ft_memset.c $(MEM)ft_memmove.c $(MEM)ft_memchr.c $(MEM)ft_memcmp.c $(MEM)ft_memalloc.c $(MEM)ft_memdel.c \
-\
-	$(ARRAY)ft_arrdup.c $(ARRAY)ft_arrjoin.c $(ARRAY)ft_arrprint.c $(ARRAY)ft_arrfree.c $(ARRAY)ft_arrlen.c $(ARRAY)ft_split_whitespaces.c $(ARRAY)ft_arrldup.c $(ARRAY)ft_arrfjoin.c \
+	$(ARRAY)ft_arrdup.c $(ARRAY)ft_arrjoin.c $(ARRAY)ft_arrprint.c $(ARRAY)ft_arrfree.c \
+	$(ARRAY)ft_arrlen.c $(ARRAY)ft_split_whitespaces.c $(ARRAY)ft_arrldup.c $(ARRAY)ft_arrfjoin.c \
 \
 	$(CONV)ft_itoa.c $(CONV)ft_itoa_base.c $(CONV)ft_atoi.c \
 \
-	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c $(LIST)ft_lstmap.c $(LIST)ft_lstnew.c \
+	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c \
+	$(LIST)ft_lstmap.c $(LIST)ft_lstnew.c \
 \
-	$(TREE)btree_apply_by_lvl.c $(TREE)btree_apply_infix.c $(TREE)btree_apply_prefix.c $(TREE)btree_apply_suffix.c $(TREE)btree_create_node.c $(TREE)btree_insert_data.c \
-	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c $(TREE)insert_case.c $(TREE)rb_insert.c $(TREE)rb_create.c
+	$(TREE)btree_apply_by_lvl.c $(TREE)btree_apply_infix.c $(TREE)btree_apply_prefix.c \
+	$(TREE)btree_apply_suffix.c $(TREE)btree_create_node.c $(TREE)btree_insert_data.c \
+	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c \
+	$(TREE)insert_case.c $(TREE)rb_insert.c $(TREE)rb_create.c
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
