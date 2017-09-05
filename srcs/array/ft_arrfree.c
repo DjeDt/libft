@@ -27,5 +27,6 @@ void	ft_arrfree(char ***array)
 			count++;
 		}
 		ft_memdel((void**)array);
+		*array = NULL;
 	}
 }

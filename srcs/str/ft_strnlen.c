@@ -19,7 +19,11 @@ size_t		ft_strnlen(const char *str, char c)
 	count = 0;
 	if (str == NULL)
 		return (0);
-	while ((str[count] != '\0') && (str[count] != c))
+	while (str[count] != '\0')
+	{
+		if (str[count] == c)
+			break ;
 		count++;
+	}
 	return (count);
 }
