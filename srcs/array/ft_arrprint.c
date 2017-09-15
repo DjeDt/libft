@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_arrprint(const char **tab)
+void	ft_arrprint(char **tab)
 {
 	size_t	count;
 

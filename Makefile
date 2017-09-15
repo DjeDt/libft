@@ -33,6 +33,10 @@ PRINT =	print/
 UTIL =	utils/
 TREE =	tree/
 
+# More sub_dir #
+BTREE = $(TREE)binary_tree/
+RBTREE = $(TREE)rb_tree/
+
 # Colors #
 COL_BLACK	= \033[1;30m
 COL_RED		= \033[1;31m
@@ -76,10 +80,9 @@ SRCS = \
 	$(LIST)ft_lstadd.c $(LIST)ft_lstdel.c $(LIST)ft_lstdelone.c $(LIST)ft_lstiter.c \
 	$(LIST)ft_lstmap.c $(LIST)ft_lstnew.c \
 \
-	$(TREE)btree_apply_by_lvl.c $(TREE)btree_apply_infix.c $(TREE)btree_apply_prefix.c \
-	$(TREE)btree_apply_suffix.c $(TREE)btree_create_node.c $(TREE)btree_insert_data.c \
-	$(TREE)btree_lvl_count.c $(TREE)btree_search_item.c $(TREE)count_node.c \
-	$(TREE)insert_case.c $(TREE)rb_insert.c $(TREE)rb_create.c
+	$(BTREE)btree_apply_by_lvl.c $(BTREE)btree_apply_infix.c $(BTREE)btree_apply_prefix.c \
+	$(BTREE)btree_apply_suffix.c $(BTREE)btree_create_node.c $(BTREE)btree_insert_data.c \
+	$(BTREE)btree_lvl_count.c $(BTREE)btree_search_item.c $(BTREE)count_node.c \
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
@@ -88,6 +91,7 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
 .PHONY: all clean fclean re logo
 
 all: $(NAME)
+	@printf "\n\e[1;38;5;202m-*- libft compiled -*-\n$(END_COL)"
 
 $(NAME): $(OBJ)
 	@$(AR) $(OBJ)
@@ -96,7 +100,7 @@ $(NAME): $(OBJ)
 $(OBJ): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) -o $@ $(FLAGS) $(E_FLAGS) $(INC) -c $<
-	@printf "$(COL_GREEN)%s -> %s                            \r$(END_COL)" $@ $<
+	@printf "\e[1;38;5;148m%s -> %s                                   \r$(END_COL)" $@ $<
 
 clean:
 	@/bin/rm -rf $(OBJ_PATH)

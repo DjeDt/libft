@@ -17,8 +17,7 @@ char	**ft_arrjoin(char **base, char *add)
 	int		count;
 	char	**ret;
 
-	if (!(ret = (char**)malloc(sizeof(char*) * \
-						ft_arrlen((const char **)base) + 1)))
+	if (!(ret = (char**)malloc(sizeof(char*) * (ft_arrlen(base) + 1))))
 		malloc_error("error in func arrjoin", -1);
 	count = -1;
 	while (base[++count] != NULL)

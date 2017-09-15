@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tree.h"
+#include "libft.h"
 
 void	btree_apply_suffix(t_btree *root, void (*applyf)(void *))
 {

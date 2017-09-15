@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_arrlen(const char **array)
+size_t	ft_arrlen(char **array)
 {
 	size_t count;
 

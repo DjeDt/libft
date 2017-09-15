@@ -20,7 +20,7 @@ void	ft_arrfree(char ***array)
 	count = 0;
 	if (array != NULL)
 	{
-		max = ft_arrlen((const char **)*array);
+		max = ft_arrlen(*array);
 		while ((*array)[count] != NULL && count < max)
 		{
 			ft_memdel((void*)&(*array)[count]);

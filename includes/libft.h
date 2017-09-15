@@ -18,13 +18,43 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-# include "array.h"
-# include "print.h"
-# include "list.h"
-# include "utils.h"
-# include "mem.h"
-# include "tree.h"
-# include "rb_tree.h"
+/* buff_size used for get_next_line */
+# define BUFF_SIZE 1
+
+/* Struct used for list func */
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+/* Struct used for binary tree */
+typedef struct		s_btree
+{
+	struct s_btree	*root;
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}					t_btree;
+
+/* Enum used for red&black tree */
+enum				e_rb_color
+{
+	RB_BLACK,
+	RB_RED
+};
+
+/* Struct used for red&black tree */
+typedef struct			s_rb_node
+{
+	void				*data;
+	enum	e_rb_color	color;
+	struct	s_rb_node	*left;
+	struct	s_rb_node	*right;
+	struct	s_rb_node	*parent;
+}						t_rb_node;
+
 
 size_t		ft_strlen(const char *str);
 size_t		ft_strnlen(const char *str, char c);
@@ -66,5 +96,86 @@ char		*ft_itoa(int n);
 char		*ft_itoa_base(int value, int base);
 int			ft_atoi(const char *str);
 void		malloc_error(const char *str, const int ret);
+
+/* Array func */
+
+char		**ft_arrcpy(char **dst, char **src);
+char		**ft_arrdup(char **array);
+char		**ft_arrldup(char **arr, size_t max);
+char		**ft_arrjoin(char **array, char *add);
+char		**ft_arrfjoin(char **array, char **add);
+void		ft_arrprint(char **array);
+void		ft_arrfree(char ***array);
+size_t		ft_arrlen(char **array);
+char		**ft_split_whitespaces(char *str);
+
+/* List Func */
+
+t_list		*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+/* Mem func */
+void		*ft_memalloc(size_t size);
+void		ft_memdel(void **ap);
+void		*ft_memset(void *b, int c, size_t len);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/* Print func */
+void		ft_putchar(char c);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr(const char *str);
+void		ft_putstr_fd(const char *s, int fd);
+void		ft_putendl(char const *s);
+void		ft_putendl_fd(char const *s, int fd);
+void		ft_putnbr(int nb);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_print_binary(unsigned int n);
+
+/* Binary_tree func */
+
+t_btree		*btree_create_node(void *item);
+void		btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
+void		btree_apply_prefix(t_btree *root, void(*applyf)(void *));
+void		btree_apply_infix(t_btree *root, void(*applyf)(void *));
+void		btree_apply_suffix(t_btree *root, void(*applyf)(void *));
+void		*btree_search_item(t_btree *root, void *data_ref, int (*cmpf)(void *, void *));
+void		btree_apply_by_lvl(t_btree *root, void (*applyf)(void *item, int cur_lvl, int is_first));
+int			btree_lvl_count(t_btree *root);
+int			count_node(t_btree *tr);
+
+/* Red & black tree */
+
+t_rb_node	*rb_create(void);
+t_rb_node	*new_node(void *data , int node_color, t_rb_node *left, t_rb_node *right);
+void		rb_insert(t_rb_node **root, void *data, int (*f)(void *, void *));
+void		insert_case1(t_rb_node *node);
+void		insert_case2(t_rb_node *node);
+void		insert_case3(t_rb_node *node);
+void		insert_case4(t_rb_node *node);
+void		insert_case5(t_rb_node *node);
+
+void		rotate_left(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n);
+void		rotate_right(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n);
+t_rb_node	*grandparent(t_rb_node *node);
+t_rb_node	*uncle(t_rb_node *node);
+
+/* Utils */
+int			ft_isalpha(int c);
+int			ft_isdigit(int c);
+int			ft_isascii(int c);
+int			ft_isalnum(int c);
+int			ft_isprint(int c);
+int			ft_isspace(int c);
+int			ft_toupper(int c);
+int			ft_tolower(int c);
+int			get_next_line(const int fd, char **line);
 
 #endif

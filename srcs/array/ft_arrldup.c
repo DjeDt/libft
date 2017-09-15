@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**ft_arrldup(const char **arr, size_t max)
+char	**ft_arrldup(char **arr, size_t max)
 {
 	size_t	count;
 	char	**ret;
@@ -20,9 +20,9 @@ char	**ft_arrldup(const char **arr, size_t max)
 	count = 0;
 	ret = NULL;
 	if (ft_arrlen(arr) < max)
-		ret = (char**)malloc(sizeof(char*) * ft_arrlen(arr) + 1);
+		ret = (char**)malloc(sizeof(char*) * (ft_arrlen(arr) + 1));
 	else
-		ret = (char**)malloc(sizeof(char*) * max + 1);
+		ret = (char**)malloc(sizeof(char*) * (max + 1));
 	if (ret == NULL)
 		malloc_error("error in func arrldup", -1);
 	while ((arr[count] != NULL) && (count < max))

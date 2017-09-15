@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_apply_prefix.c                               :+:      :+:    :+:   */
+/*   btree_create_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/12 16:47:50 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/12 16:47:51 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/13 16:56:34 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/15 18:20:46 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tree.h"
+#include "libft.h"
 
-void	btree_apply_prefix(t_btree *root, void(*applyf)(void *))
+t_btree		*btree_create_node(void *item)
 {
-	if (root != NULL)
+	t_btree *new;
+
+	if (!(new = (t_btree*)malloc(sizeof(t_btree))))
+		return (NULL);
+	else
 	{
-		applyf(root->item);
-		btree_apply_prefix(root->left, applyf);
-		btree_apply_prefix(root->right, applyf);
+		new->left = NULL;
+		new->right = NULL;
+		new->root = NULL;
+		new->item = item;
 	}
+	return (new);
 }

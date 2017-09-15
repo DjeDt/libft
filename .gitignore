@@ -36,4 +36,5 @@ ft_ls
 # Fichiers inutiles
 main.c
 *~
+includes/old
 .DS_STORE

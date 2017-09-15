@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create_node.c                                :+:      :+:    :+:   */
+/*   btree_lvl_count.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/13 16:56:34 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/15 18:20:46 by ddinaut          ###   ########.fr       */
+/*   Created: 2017/06/12 16:37:29 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/06/12 16:57:17 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tree.h"
+#include "libft.h"
 
-t_btree		*btree_create_node(void *item)
+int		btree_lvl_count(t_btree *root)
 {
-	t_btree *new;
+	int count;
 
-	if (!(new = (t_btree*)malloc(sizeof(t_btree))))
-		return (NULL);
-	else
-	{
-		new->left = NULL;
-		new->right = NULL;
-		new->root = NULL;
-		new->item = item;
-	}
-	return (new);
+	if (root == NULL)
+		return (0);
+	count = 0;
+	return ((btree_lvl_count(root->left) - btree_lvl_count(root->right)) + (++count));
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h.h"
 
-char	**ft_arrcpy(char **dst, const char **src)
+char	**ft_arrcpy(char **dst, char **src)
 {
 	int count;
 	int count2;
@@ -20,8 +20,6 @@ char	**ft_arrcpy(char **dst, const char **src)
 	count = 0;
 	while (src[count] != NULL)
 	{
-		if (!(dst[count] = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
-			malloc_error("error in func arrcpy", -1);
 		count2 = 0;
 		while (src[count][count2] != '\0')
 		{
