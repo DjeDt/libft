@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/*
+**	ft_strcpy :
+**	-> copies the string pointed to by src, including '\0',
+**	   to the buffer pointed to by dest.
+*/
+
 char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;

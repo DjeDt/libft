@@ -12,11 +12,16 @@
 
 #include "../includes/libft.h"
 
+/*
+**	ft_bzero :
+**	-> ft_bzero() erase n bytes of the memory pointed by s by writting '\0'
+*/
+
 void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
+	unsigned char	*tmp;
 
-	str = (char *)s;
+	tmp = s;
 	while (n--)
-		str[n] = '\0';
+		tmp[n] = '\0';
 }

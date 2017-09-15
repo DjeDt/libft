@@ -12,21 +12,23 @@
 
 #include "libft.h"
 
+/*
+**	ft_strcat :
+**	-> append s1 to s2, overwriting the terminating null byte at the end of s1
+**	   and then adds a terminating null byte
+*/
+
 char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*ret;
-	char	*str;
+	char			*ret;
+	unsigned char	*str;
 
 	ret = s1;
-	str = (char*)s2;
-	while (*ret != '\0')
+	str = (unsigned char *)s2;
+	while ((*ret) != '\0')
 		ret++;
-	while (*str != '\0')
-	{
-		*ret = *str;
-		ret++;
-		str++;
-	}
-	*ret = '\0';
+	while ((*str) != '\0')
+		(*ret++) = (*str++);
+	(*ret) = '\0';
 	return (s1);
 }

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	ft_strclr :
+**	-> replace char pointed by s with '\0'
+*/
+
 void	ft_strclr(char *s)
 {
 	size_t i;

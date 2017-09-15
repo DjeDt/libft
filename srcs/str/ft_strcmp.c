@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/*
+**	ft_strcmp :
+**	-> Returns an integer less than, equal to, greater than zero if s1 is found,
+**	   respectively, to be less than, to match, or be greater than s2
+*/
+
 int		ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;

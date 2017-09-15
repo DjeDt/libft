@@ -12,9 +12,14 @@
 
 #include "libft.h"
 
+/*
+**	ft_strdel :
+**	-> free memory pointed by as and put it at NULL
+*/
+
 void	ft_strdel(char **as)
 {
-	if (as != '\0')
+	if (as != NULL)
 	{
 		free(*as);
 		*as = NULL;

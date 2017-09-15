@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/*
+**	ft_strequ :
+**	-> compare s1 and s2, return 1 if strings are the same, 0 if not
+*/
+
 int		ft_strequ(char const *s1, char const *s2)
 {
 	size_t i;
