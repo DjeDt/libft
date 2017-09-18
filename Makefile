@@ -56,6 +56,7 @@ SRCS = \
 	$(PRINT)ft_putchar.c $(PRINT)ft_putchar_fd.c $(PRINT)ft_putendl.c \
 	$(PRINT)ft_putendl_fd.c $(PRINT)ft_putnbr.c $(PRINT)ft_putnbr_fd.c \
 	$(PRINT)ft_putstr.c $(PRINT)ft_putstr_fd.c $(PRINT)ft_print_binary.c \
+	$(PRINT)ft_putstr_col.c $(PRINT)ft_putendl_col.c \
 \
 	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c \
 	$(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \
@@ -83,6 +84,14 @@ SRCS = \
 	$(BTREE)btree_apply_by_lvl.c $(BTREE)btree_apply_infix.c $(BTREE)btree_apply_prefix.c \
 	$(BTREE)btree_apply_suffix.c $(BTREE)btree_create_node.c $(BTREE)btree_insert_data.c \
 	$(BTREE)btree_lvl_count.c $(BTREE)btree_search_item.c $(BTREE)count_node.c \
+\
+	$(RBTREE)compare.c \
+	$(RBTREE)deletion.c \
+	$(RBTREE)family.c \
+	$(RBTREE)insert_case.c \
+	$(RBTREE)rotate.c \
+	$(RBTREE)search_node.c \
+	$(RBTREE)insert_node.c
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))

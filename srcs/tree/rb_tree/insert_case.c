@@ -1,6 +1,5 @@
-#include "rbtree.h"
+#include "libft.h"
 #include <stdio.h>
-
 /*
  *	Regle 1 : Chaque noeud est soit rouge soit noir
  *	Regle 2 : La racine est noire
@@ -10,10 +9,11 @@
 
 void	insert_case1(t_rbtree *n)
 {
+	ft_putendl("insert case 1");
 	if (n->parent ==  NULL)
 		n->color = BLACK;
 	else
-		insert_case2(n);
+		insert_case2(n->left);
 }
 
 void	insert_case2(t_rbtree *n)
@@ -68,12 +68,12 @@ void	insert_case4(t_rbtree *n)
 	{
 		rotate_right(n->parent, gp);
 
-		/*
+/*
 		t_rbtree *saved_p = gp->right, *saved_right_n = n->right;
 		gp->right=n;
 		n->right=saved_p;
 		saved_p->left=saved_right_n;
-		*/
+*/
 		n = n->right;
 	}
 	insert_case5(n);

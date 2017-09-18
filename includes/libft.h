@@ -21,6 +21,27 @@
 /* buff_size used for get_next_line */
 # define BUFF_SIZE 1
 
+/* defined color for print color func */
+# define RED_COL		"\e[31m"
+# define CYAN_COL		"\e[36m"
+# define BLUE_COL		"\e[34m"
+# define GREEN_COL		"\e[32m"
+# define YELLOW_COL		"\e[33m"
+# define MAGENTA_COL	"\e[35m"
+# define LIGHT_RED		"\e[91m"
+# define LIGHT_GRAY		"\e[37m"
+# define LIGHT_CYAN		"\e[96m"
+# define LIGHT_BLUE		"\e[94m"
+# define LIGHT_GREEN	"\e[92m"
+# define LIGHT_YELLOW	"\e[93m"
+# define LIGHT_MAGENTA	"\e[95m"
+# define DARK_GRAY		"\e[90m"
+# define WHITE			"\e[97m"
+# define END_COL		"\e[0m"
+
+/* func used to compare data in red&black_tree */
+typedef int (*compare_func)(void *left, void *right);
+
 /* Struct used for list func */
 typedef struct		s_list
 {
@@ -39,21 +60,22 @@ typedef struct		s_btree
 }					t_btree;
 
 /* Enum used for red&black tree */
-enum				e_rb_color
+typedef enum	tree_color
 {
-	RB_BLACK,
-	RB_RED
-};
+	RED,
+	BLACK
+}				t_color;
 
 /* Struct used for red&black tree */
-typedef struct			s_rb_node
+typedef struct			s_rbtree
 {
+	int					hash;
 	void				*data;
-	enum	e_rb_color	color;
-	struct	s_rb_node	*left;
-	struct	s_rb_node	*right;
-	struct	s_rb_node	*parent;
-}						t_rb_node;
+	t_color				color;
+	struct	s_rbtree	*left;
+	struct	s_rbtree	*right;
+	struct	s_rbtree	*parent;
+}						t_rbtree;
 
 
 size_t		ft_strlen(const char *str);
@@ -138,9 +160,11 @@ void		ft_putendl_fd(char const *s, int fd);
 void		ft_putnbr(int nb);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_print_binary(unsigned int n);
+void		ft_putendl_col(const char *str, char *color);
+void		ft_putstr_col(const char *str, char *color);
+
 
 /* Binary_tree func */
-
 t_btree		*btree_create_node(void *item);
 void		btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
 void		btree_apply_prefix(t_btree *root, void(*applyf)(void *));
@@ -152,20 +176,28 @@ int			btree_lvl_count(t_btree *root);
 int			count_node(t_btree *tr);
 
 /* Red & black tree */
+void		insert_case1(t_rbtree *n);
+void		insert_case2(t_rbtree *n);
+void		insert_case3(t_rbtree *n);
+void		insert_case4(t_rbtree *n);
+void		insert_case5(t_rbtree *n);
 
-t_rb_node	*rb_create(void);
-t_rb_node	*new_node(void *data , int node_color, t_rb_node *left, t_rb_node *right);
-void		rb_insert(t_rb_node **root, void *data, int (*f)(void *, void *));
-void		insert_case1(t_rb_node *node);
-void		insert_case2(t_rb_node *node);
-void		insert_case3(t_rb_node *node);
-void		insert_case4(t_rb_node *node);
-void		insert_case5(t_rb_node *node);
+void		delete_case1(t_rbtree *n);
+void		delete_case2(t_rbtree *n);
+void		delete_case3(t_rbtree *n);
+void		delete_case4(t_rbtree *n);
+void		delete_case5(t_rbtree *n);
+void		delete_case6(t_rbtree *n);
 
-void		rotate_left(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n);
-void		rotate_right(t_rb_node *node, t_rb_node *save_p, t_rb_node *save_n);
-t_rb_node	*grandparent(t_rb_node *node);
-t_rb_node	*uncle(t_rb_node *node);
+void		rotate_right(t_rbtree *n, t_rbtree *g);
+void		rotate_left(t_rbtree *n, t_rbtree *g);
+int			compare_node(void *leftp, void *rightp);
+t_rbtree	*new_node(void *data, t_rbtree *parent);
+void		insert_node(t_rbtree **root, void *data, compare_func compare);
+t_rbtree	*search_node(t_rbtree **root, void *data, compare_func compare);
+t_rbtree	*uncle(t_rbtree *n);
+t_rbtree    *sibling(t_rbtree *n);
+t_rbtree	*grandparent(t_rbtree *n);
 
 /* Utils */
 int			ft_isalpha(int c);

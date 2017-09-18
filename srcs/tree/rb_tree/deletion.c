@@ -1,4 +1,4 @@
-#include "rbtree.h"
+#include "libft.h"
 #include <stdio.h>
 
 void	delete_case1(t_rbtree *n)
@@ -14,9 +14,6 @@ void	delete_case2(t_rbtree *n)
 	t_rbtree *gp;
 
 	printf("delete_case2\n");
-	/*
-
-	 */
 	sib = sibling(n);
 	if (sib->color == RED)
 	{
@@ -60,7 +57,7 @@ void	delete_case4(t_rbtree *n)
 		(sib->left->color == BLACK) &&
 		(sib->right->color == BLACK))
 	{
-		sib->color == RED;
+		sib->color = RED;
 		n->parent->color = BLACK;
 	}
 	else
