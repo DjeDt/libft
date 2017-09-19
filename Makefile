@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/06/15 14:55:28 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/09/19 19:26:26 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -56,7 +56,7 @@ SRCS = \
 	$(PRINT)ft_putchar.c $(PRINT)ft_putchar_fd.c $(PRINT)ft_putendl.c \
 	$(PRINT)ft_putendl_fd.c $(PRINT)ft_putnbr.c $(PRINT)ft_putnbr_fd.c \
 	$(PRINT)ft_putstr.c $(PRINT)ft_putstr_fd.c $(PRINT)ft_print_binary.c \
-	$(PRINT)ft_putstr_col.c $(PRINT)ft_putendl_col.c \
+	$(PRINT)ft_putstr_col.c $(PRINT)ft_putendl_col.c $(PRINT)ft_putendl_col_fd.c \
 \
 	$(STR)ft_strcat.c $(STR)ft_strchr.c $(STR)ft_strreplace.c $(STR)ft_strclr.c \
 	$(STR)ft_strcmp.c $(STR)ft_strcpy.c $(STR)ft_strdel.c $(STR)ft_strdup.c $(STR)ft_strndup.c \

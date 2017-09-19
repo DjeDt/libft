@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/15 14:49:09 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/09/19 19:26:08 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ void		ft_putnbr(int nb);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_print_binary(unsigned int n);
 void		ft_putendl_col(const char *str, char *color);
+void		ft_putendl_col_fd(const char *s, int fd, char *color);
 void		ft_putstr_col(const char *str, char *color);
 
 
