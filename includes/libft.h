@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/19 19:26:08 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/09/20 18:13:27 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,6 +209,7 @@ int			ft_isprint(int c);
 int			ft_isspace(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+int			open_file(const char *str);
 int			get_next_line(const int fd, char **line);
 
 #endif

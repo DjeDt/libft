@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/09/19 19:26:26 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/09/20 18:14:35 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -69,6 +69,7 @@ SRCS = \
 \
 	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c \
 	$(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \
+	$(UTIL)open_file.c \
 \
 	$(MEM)ft_memcpy.c $(MEM)ft_memccpy.c $(MEM)ft_memset.c $(MEM)ft_memmove.c $(MEM)ft_memchr.c \
 	$(MEM)ft_memcmp.c $(MEM)ft_memalloc.c $(MEM)ft_memdel.c \
@@ -85,13 +86,8 @@ SRCS = \
 	$(BTREE)btree_apply_suffix.c $(BTREE)btree_create_node.c $(BTREE)btree_insert_data.c \
 	$(BTREE)btree_lvl_count.c $(BTREE)btree_search_item.c $(BTREE)count_node.c \
 \
-	$(RBTREE)compare.c \
-	$(RBTREE)deletion.c \
-	$(RBTREE)family.c \
-	$(RBTREE)insert_case.c \
-	$(RBTREE)rotate.c \
-	$(RBTREE)search_node.c \
-	$(RBTREE)insert_node.c
+	$(RBTREE)compare.c $(RBTREE)deletion.c $(RBTREE)family.c $(RBTREE)insert_case.c $(RBTREE)rotate.c \
+	$(RBTREE)search_node.c $(RBTREE)insert_node.c
 
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
