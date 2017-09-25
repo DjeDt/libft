@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   deletion.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/25 17:23:33 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/09/25 17:23:33 by ddinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 void	delete_case1(t_rbtree *n)
 {
-	printf("delete_case1\n");
 	if (n->parent != NULL)
 		delete_case2(n);
 }
@@ -13,8 +23,8 @@ void	delete_case2(t_rbtree *n)
 	t_rbtree *sib;
 	t_rbtree *gp;
 
-	printf("delete_case2\n");
-	sib = sibling(n);
+	if (!(sib = sibling(n)))
+		return ;
 	if (sib->color == RED)
 	{
 		gp = grandparent(n);
@@ -32,8 +42,8 @@ void	delete_case3(t_rbtree *n)
 {
 	t_rbtree *sib;
 
-	printf("delete_case3\n");
-	sib = sibling(n);
+	if (!(sib = sibling(n)))
+		return ;
 	if ((n->parent->color == BLACK) &&
 		(sib->color == BLACK) &&
 		(sib->left->color == BLACK) &&
@@ -50,8 +60,8 @@ void	delete_case4(t_rbtree *n)
 {
 	t_rbtree *sib;
 
-	printf("delete_case4\n");
-	sib = sibling(n);
+	if (!(sib = sibling(n)))
+		return ;
 	if ((n->parent->color == RED) &&
 		(sib->color == BLACK) &&
 		(sib->left->color == BLACK) &&
@@ -69,9 +79,10 @@ void	delete_case5(t_rbtree *n)
 	t_rbtree *sib;
 	t_rbtree *gp;
 
-	printf("delete_case5\n");
-	sib = sibling(n);
-	gp = grandparent(n);
+	if (!(sib = sibling(n)))
+		return ;
+	if (!(gp = grandparent(n)))
+		return ;
 	if (sib->color == BLACK)
 	{
 		if ((n == n->parent->left) &&
@@ -83,8 +94,8 @@ void	delete_case5(t_rbtree *n)
 			rotate_right(sib, gp);
 		}
 		else if ((n == n->parent->right) &&
-				 (sib->left->color == BLACK) &&
-				 (sib->right->color == RED))
+				(sib->left->color == BLACK) &&
+				(sib->right->color == RED))
 		{
 			sib->color = RED;
 			sib->right->color = BLACK;
@@ -99,7 +110,8 @@ void	delete_case6(t_rbtree *n)
 	t_rbtree *sib;
 	t_rbtree *gp;
 
-	sib = sibling(n);
+	if (!(sib = sibling(n)))
+		return ;
 	gp = grandparent(n);
 	sib->color = n->parent->color;
 	n->parent->color = BLACK;

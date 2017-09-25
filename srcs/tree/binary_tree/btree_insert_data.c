@@ -6,14 +6,14 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 15:12:47 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/15 17:06:33 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/09/25 16:43:26 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void			btree_insert_data(t_btree **root, void *item, int (*cmpf)
-						  (void *, void *))
+								(void *, void *))
 {
 	if (item == NULL)
 		return ;

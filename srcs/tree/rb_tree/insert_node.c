@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   insert_node.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/25 17:34:34 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/09/25 17:35:22 by ddinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_rbtree	*create_node(void *data, t_rbtree *parent)
@@ -15,7 +27,8 @@ t_rbtree	*create_node(void *data, t_rbtree *parent)
 	return (new);
 }
 
-void		insert_node2(t_rbtree **root, t_rbtree *parent, void *data, compare_func compare)
+void		insert_node2(t_rbtree **root, t_rbtree *parent, \
+						void *data, compare_func compare)
 {
 	if (data == NULL)
 		return ;
@@ -36,7 +49,7 @@ void		insert_node2(t_rbtree **root, t_rbtree *parent, void *data, compare_func c
 	}
 }
 
-void        insert_node(t_rbtree **root, void *data, compare_func compare)
+void		insert_node(t_rbtree **root, void *data, compare_func compare)
 {
 	if (data == NULL)
 		return ;

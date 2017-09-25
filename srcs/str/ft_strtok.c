@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/25 16:32:41 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/09/25 16:33:43 by ddinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int found_one(char c, const char *delim)
+static int	found_one(char c, const char *delim)
 {
 	int i;
 
@@ -16,7 +28,7 @@ static int found_one(char c, const char *delim)
 	return (-1);
 }
 
-static int count_word(const char *str, const char *delim)
+static int	count_word(const char *str, const char *delim)
 {
 	int	i;
 	int count;
@@ -25,13 +37,14 @@ static int count_word(const char *str, const char *delim)
 	count = 0;
 	while (str[++i] != '\0')
 	{
-		if ((found_one(str[i], delim) == -1) && (found_one(str[i + 1], delim) == 0))
+		if ((found_one(str[i], delim) == -1) && \
+			(found_one(str[i + 1], delim) == 0))
 			count++;
 	}
 	return (count);
 }
 
-char	**ft_strtok(const char *str, const char *delim)
+char		**ft_strtok(const char *str, const char *delim)
 {
 	int		j;
 	int		k;

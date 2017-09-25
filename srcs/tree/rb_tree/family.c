@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   family.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/25 17:27:31 by ddinaut           #+#    #+#             */
+/*   Updated: 2017/09/25 17:29:05 by ddinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_rbtree *grandparent(t_rbtree *n)
+t_rbtree	*grandparent(t_rbtree *n)
 {
 	if (n != NULL)
 	{
@@ -29,15 +41,16 @@ t_rbtree	*uncle(t_rbtree *n)
 		}
 	}
 	return (NULL);
-/*
-	if ((g = grandparent(n)) == NULL)
-		return (NULL);
-	if (n->parent == g->left)
-		return (g->right);
-	else
-		return (g->left);
-*/
 }
+
+/*
+**	if ((g = grandparent(n)) == NULL)
+**		return (NULL);
+**	if (n->parent == g->left)
+**		return (g->right);
+**	else
+**		return (g->left);
+*/
 
 t_rbtree	*sibling(t_rbtree *n)
 {
@@ -52,12 +65,13 @@ t_rbtree	*sibling(t_rbtree *n)
 		}
 	}
 	return (NULL);
-	/*
-	if ((n == NULL) || (n->parent == NULL))
-		return (NULL);
-	if (n == n->parent->left)
-		return (n->parent->right);
-	else
-		return (n->parent->left);
-	*/
 }
+
+/*
+**	if ((n == NULL) || (n->parent == NULL))
+**		return (NULL);
+**	if (n == n->parent->left)
+**		return (n->parent->right);
+**	else
+**		return (n->parent->left);
+*/
