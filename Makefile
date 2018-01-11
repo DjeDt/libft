@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/09/20 18:14:35 by ddinaut          ###   ########.fr        #
+#    Updated: 2017/09/26 15:02:07 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -96,7 +96,6 @@ SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
 .PHONY: all clean fclean re logo
 
 all: $(NAME)
-	@printf "\n\e[1;38;5;202m-*- libft compiled -*-\n$(END_COL)"
 
 $(NAME): $(OBJ)
 	@$(AR) $(OBJ)

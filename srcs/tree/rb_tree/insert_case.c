@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 17:29:44 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/25 17:34:01 by ddinaut          ###   ########.fr       */
+/*   Updated: 2017/09/25 18:19:34 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	insert_case1(t_rbtree *n)
 	if (n->parent == NULL)
 		n->color = BLACK;
 	else
-		insert_case2(n->left);
+		insert_case2(n);
 }
 
 void	insert_case2(t_rbtree *n)
