@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 15:58:59 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/06 15:37:50 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:36:44 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strndup(const char *src, size_t n)
 	else
 		ret = malloc(sizeof(char) * n + 1);
 	if (ret == NULL)
-		malloc_error("error in func ft_strndup", -1);
+		return (NULL);
 	while (src[count] != '\0' && count < n)
 	{
 		ret[count] = src[count];

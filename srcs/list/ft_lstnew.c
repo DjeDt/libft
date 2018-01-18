@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 16:11:41 by ddinaut           #+#    #+#             */
-/*   Updated: 2016/11/16 19:43:35 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:47:08 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	void	*tmp;
 
 	if (!(ret = (t_list*)malloc(sizeof(t_list))))
-		malloc_error("error in func lstnew -> var [ret]", -1);
+		return (NULL);
 	if ((void *)content && content_size > 0)
 	{
 		if (!(tmp = (void*)malloc(sizeof(void))))
-			malloc_error("error in func lstnew -> var [tmp]", -1);
+			return (NULL);
 		ret->content_size = content_size;
 		while (content_size--)
 			*(unsigned char *)tmp++ = *(unsigned char *)content++;

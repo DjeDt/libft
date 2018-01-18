@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 17:21:56 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/25 16:34:43 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:46:04 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_arrjoin(char **base, char *add)
 	char	**ret;
 
 	if (!(ret = (char**)malloc(sizeof(char*) * (ft_arrlen(base) + 1))))
-		malloc_error("error in func arrjoin", -1);
+		return (NULL);
 	count = -1;
 	while (base[++count] != NULL)
 		ret[count] = base[count];

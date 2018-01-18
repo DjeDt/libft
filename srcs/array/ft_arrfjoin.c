@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 17:21:56 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/25 16:37:08 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:46:50 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**ft_arrfjoin(char **base, char **add)
 	if (!(ret = (char**)malloc(sizeof(char*) * \
 							(ft_arrlen(base) + \
 							ft_arrlen(add) + 1))))
-		malloc_error("error in ft_arrfjoin", -1);
+		return (NULL);
 	count = 0;
 	count2 = 0;
 	while (base[count] != NULL)

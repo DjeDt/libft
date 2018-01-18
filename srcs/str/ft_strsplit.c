@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:42:26 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/05/11 19:10:23 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:37:14 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char			**ft_strsplit(const char *s, char c)
 		return (NULL);
 	nbmot = nbr_mots(s, c);
 	if (!(ret = (char**)malloc(sizeof(char*) * nbmot + 1)))
-		malloc_error("error in func ft_strsplit", -1);
+		return (NULL);
 	while (++j < nbmot)
 	{
 		while (s[i] != '\0' && s[i] == c)

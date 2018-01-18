@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 16:32:41 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/25 16:33:43 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:37:29 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char		**ft_strtok(const char *str, const char *delim)
 	if (str == NULL)
 		return (NULL);
 	if (!(tab = (char**)malloc(sizeof(char*) * (count_word(str, delim) + 1))))
-		malloc_error("error in func ft_strtok", -1);
+		return (NULL);
 	j = -1;
 	k = 0;
 	count = -1;

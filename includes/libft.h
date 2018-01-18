@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 20:10:22 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/09/25 18:07:47 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:43:48 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 /*
 ** func used to compare data in red&black_tree
 */
-typedef int	(*compare_func) (void *left, void *right);
+typedef int	(*compare_func)(void *left, void *right);
 
 /*
 ** Struct used for list func
@@ -72,7 +72,7 @@ typedef struct		s_btree
 /*
 ** Enum used for red&black tree
 */
-typedef enum		tree_color
+typedef enum		s_color
 {
 	RED,
 	BLACK
@@ -133,7 +133,6 @@ void				ft_bzero(void *s, size_t n);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(int value, int base);
 int					ft_atoi(const char *str);
-void				malloc_error(const char *str, const int ret);
 
 /*
 ** Array func
@@ -242,6 +241,7 @@ int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					open_file(const char *str);
+int					brackets(char *s);
 int					get_next_line(const int fd, char **line);
 
 #endif

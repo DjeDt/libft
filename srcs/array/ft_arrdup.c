@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 12:19:02 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/27 16:43:05 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:45:48 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		**ft_arrdup(char **array)
 
 	count = 0;
 	if (!(ret = (char**)malloc(sizeof(char*) * (ft_arrlen(array) + 1))))
-		malloc_error("error in func arrdup", -1);
+		return (NULL);
 	while (array[count] != NULL)
 	{
 		ret[count] = ft_strdup(array[count]);

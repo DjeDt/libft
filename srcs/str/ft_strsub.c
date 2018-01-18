@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 03:03:55 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/08 15:14:22 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:44:22 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s != NULL)
 	{
 		if (!(ret = (char*)malloc(sizeof(char) * (len + 1))))
-			malloc_error("error in func ft_strsub", -1);
+			return (NULL);
 		while (i < len)
 		{
 			ret[i] = s[start];

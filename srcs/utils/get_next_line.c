@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:30:51 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/06/10 15:22:05 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:45:12 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int			get_next_line(const int fd, char **line)
 	if (save == NULL)
 		save = ft_strnew(0);
 	if (!((*line) = (char*)malloc(sizeof(char) * BUFF_SIZE + 1)))
-		malloc_error("error in func get_next_line", -1);
+		return (-1);
 	while (!(ft_strchr(save, '\n')))
 	{
 		if ((ret = read(fd, (*line), BUFF_SIZE)) < 1)

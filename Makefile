@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2017/09/26 15:02:07 by ddinaut          ###   ########.fr        #
+#    Updated: 2018/01/18 14:38:18 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -65,7 +65,7 @@ SRCS = \
 	$(STR)ft_strnlen.c $(STR)ft_strmap.c $(STR)ft_strmapi.c $(STR)ft_strncat.c $(STR)ft_strncmp.c \
 	$(STR)ft_strncpy.c $(STR)ft_strnequ.c $(STR)ft_strnew.c $(STR)ft_strnstr.c $(STR)ft_strrchr.c \
 	$(STR)ft_strsplit.c $(STR)ft_strstr.c $(STR)ft_strsub.c $(STR)ft_strtrim.c $(STR)ft_bzero.c \
-	$(STR)ft_strfsub.c $(STR)ft_malloc_error.c $(STR)ft_strtok.c \
+	$(STR)ft_strfsub.c $(STR)ft_strtok.c \
 \
 	$(UTIL)ft_isdigit.c $(UTIL)ft_isalnum.c $(UTIL)ft_isascii.c $(UTIL)ft_isprint.c $(UTIL)ft_isspace.c \
 	$(UTIL)ft_count_char.c $(UTIL)get_next_line.c $(UTIL)ft_isalpha.c $(UTIL)ft_tolower.c $(UTIL)ft_toupper.c \

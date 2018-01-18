@@ -6,7 +6,7 @@
 /*   By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:15:00 by ddinaut           #+#    #+#             */
-/*   Updated: 2017/04/27 16:23:55 by ddinaut          ###   ########.fr       */
+/*   Updated: 2018/01/18 14:46:18 by ddinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char			**ft_split_whitespaces(char *str)
 	taille = 0;
 	nbmot = nbr_mots(str);
 	if (!(tab = (char**)malloc(sizeof(char*) * (nbmot + 1))))
-		malloc_error("error in func split_whitespaces", -1);
+		return (NULL);
 	while (j < nbmot)
 	{
 		while ((delimiteurs(str[i])))
