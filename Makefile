@@ -6,11 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2018/02/08 10:02:25 by ddinaut          ###   ########.fr        #
-=======
-#    Updated: 2018/01/18 14:38:18 by ddinaut          ###   ########.fr        #
->>>>>>> 86b94395a5a25fa6bc39432869c59a6d17d2cce6
+#    Updated: 2018/02/24 14:38:35 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,11 +16,8 @@ NAME = libft.a
 # Details #
 CC		= gcc
 FLAGS	= -Wall -Wextra -Werror
-<<<<<<< HEAD
 E_FLAGS =
-=======
 DEBUG	= no
->>>>>>> 86b94395a5a25fa6bc39432869c59a6d17d2cce6
 
 # Path #
 OBJ_PATH = obj
@@ -32,16 +25,14 @@ SRC_PATH = srcs
 INC_PATH = includes/
 
 # Sub_dirs #
-<<<<<<< HEAD
-STR =	str/
-MEM =	mem/
-ARRAY =	array/
-LIST =	list/
-CONV =	conversion/
-PRINT =	print/
-UTIL =	utils/
-TREE =	tree/
-=======
+STR		= str/
+MEM		= mem/
+ARRAY	= array/
+LIST	= list/
+CONV	= conversion/
+PRINT	=	print/
+UTIL	= utils/
+TREE	= tree/
 STR		= str/
 MEM		= mem/
 ARRAY	= array/
@@ -50,7 +41,6 @@ CONV	= conversion/
 PRINT	= print/
 UTIL	= utils/
 TREE	= tree/
->>>>>>> 86b94395a5a25fa6bc39432869c59a6d17d2cce6
 
 # More sub_dir #
 BTREE = $(TREE)binary_tree/
@@ -64,6 +54,7 @@ COL_YELLOW	= \033[1;33m
 COL_BLUE	= \033[1;34m
 COL_PURPLE	= \033[1;35m
 COL_WHITE	= \033[1;37m
+CLEAN_LINE	= \033[K
 END_COL		= \033[0;m
 
 AR	= ar rc $(NAME)
@@ -111,10 +102,9 @@ SRCS = \
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 SRC = $(addprefix $(SRC_PATH)/,$(SRCS))
 
-<<<<<<< HEAD
 # Rules #
 .PHONY: all clean fclean re logo
-=======
+
 # Percent progress #
 COUNT		= 1
 NB_FILES	= $(words $(SRCS))
@@ -129,7 +119,6 @@ endif
 
 # Rules #
 .PHONY: all clean fclean re
->>>>>>> 86b94395a5a25fa6bc39432869c59a6d17d2cce6
 
 all: $(NAME)
 
@@ -139,14 +128,10 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@mkdir -p $(dir $@)
-<<<<<<< HEAD
 	@$(CC) -o $@ $(FLAGS) $(E_FLAGS) $(INC) -c $<
-	@printf "\e[1;38;5;148m%s -> %s                                   \r$(END_COL)" $@ $<
-=======
+	@printf "[%-5.2f%%] \e[1;38;5;148m%s -> %s$(END_COL)                 \r" $(PERCENT) $@ $<
 	@$(CC) -o $@ $(FLAGS) $(INC) -c $<
-	@printf "\r$(COL_RED)[%-5.2f%%] $(COL_GREEN)[$<] -> [$@]$(END_COL)" $(PERCENT)
-	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
->>>>>>> 86b94395a5a25fa6bc39432869c59a6d17d2cce6
+	@$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 
 clean:
 	@/bin/rm -rf $(OBJ_PATH)
