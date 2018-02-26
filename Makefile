@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2018/02/24 14:38:35 by ddinaut          ###   ########.fr        #
+#    Updated: 2018/02/26 17:54:07 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -130,7 +130,6 @@ $(OBJ): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) -o $@ $(FLAGS) $(E_FLAGS) $(INC) -c $<
 	@printf "[%-5.2f%%] \e[1;38;5;148m%s -> %s$(END_COL)                 \r" $(PERCENT) $@ $<
-	@$(CC) -o $@ $(FLAGS) $(INC) -c $<
 	@$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 
 clean:
