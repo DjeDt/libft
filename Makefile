@@ -6,7 +6,7 @@
 #    By: ddinaut <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 19:43:04 by ddinaut           #+#    #+#              #
-#    Updated: 2018/02/26 17:54:07 by ddinaut          ###   ########.fr        #
+#    Updated: 2018/02/27 11:20:09 by ddinaut          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,14 +25,6 @@ SRC_PATH = srcs
 INC_PATH = includes/
 
 # Sub_dirs #
-STR		= str/
-MEM		= mem/
-ARRAY	= array/
-LIST	= list/
-CONV	= conversion/
-PRINT	=	print/
-UTIL	= utils/
-TREE	= tree/
 STR		= str/
 MEM		= mem/
 ARRAY	= array/
